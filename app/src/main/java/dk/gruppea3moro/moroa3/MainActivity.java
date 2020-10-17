@@ -10,8 +10,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Fragment bottomBarFragment, mainFragment;
 
-    Button rightNowButton, findEventButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .add(R.id.mainFL, mainFragment)  // tom container i layout
                 .commit();
 
-        //Buttons
-        rightNowButton = findViewById(R.id.rightNowButton);
-        findEventButton = findViewById(R.id.findEventButton);
-        findEventButton.setOnClickListener(this);
-        rightNowButton.setOnClickListener(this);
-
         //Bottombar
         bottomBarFragment = new BottomBarFragment();
         getSupportFragmentManager().beginTransaction()
@@ -40,18 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == findEventButton) {
-            mainFragment = new ShowResultFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.findEventFragment, mainFragment)  // tom container i layout
-                    .commit();
 
-        }
-        if (v == rightNowButton) {
-            mainFragment = new ShowResultFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.mainFL, mainFragment)  // tom container i layout
-                    .commit();
-        }
     }
 }
