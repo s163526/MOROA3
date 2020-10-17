@@ -16,8 +16,7 @@ public class FindEventFragment extends Fragment implements View.OnClickListener 
     Fragment findEventFragment;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_find_event, container, false);
 
@@ -26,7 +25,6 @@ public class FindEventFragment extends Fragment implements View.OnClickListener 
         findEventButton = v.findViewById(R.id.findEventButton);
         findEventButton.setOnClickListener(this);
         rightNowButton.setOnClickListener(this);
-
 
         return v;
     }
@@ -38,8 +36,8 @@ public class FindEventFragment extends Fragment implements View.OnClickListener 
             getFragmentManager().beginTransaction()
                     .add(R.id.findEventFragment, findEventFragment)  // tom container i layout
                     .commit();
-
         }
+
         if (v == rightNowButton) {
             findEventFragment = new ShowResultFragment();
             getFragmentManager().beginTransaction()
