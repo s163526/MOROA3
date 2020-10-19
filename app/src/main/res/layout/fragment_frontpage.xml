@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".FrontpageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -23,13 +22,13 @@
             tools:src="@tools:sample/avatars" />
 
         <Button
-            android:id="@+id/rightNowButton"
+            android:id="@+id/rightNowButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lige_nu" />
 
         <Button
-            android:id="@+id/findEventButton"
+            android:id="@+id/findEventButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/find_event" />

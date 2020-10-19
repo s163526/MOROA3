@@ -21,8 +21,8 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         View root = inflater.inflate(R.layout.fragment_frontpage, container, false);
 
         //Buttons
-        rightNowButton = root.findViewById(R.id.rightNowButton);
-        findEventButton = root.findViewById(R.id.findEventButton);
+        rightNowButton = root.findViewById(R.id.rightNowButtonFP);
+        findEventButton = root.findViewById(R.id.rightNowButtonFP);
         findEventButton.setOnClickListener(this);
         rightNowButton.setOnClickListener(this);
 

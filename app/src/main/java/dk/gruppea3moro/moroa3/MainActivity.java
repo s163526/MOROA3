@@ -9,7 +9,7 @@ import android.widget.Button;
 
 //TODO burgermenu(kontakt os osv), søge menu med filtre, evt?
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Fragment bottomBarFragment, mainFragment;
+    Fragment bottomBarFragment, mainFragment, topBarFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         //Top bar
+        topBarFragment = new TopBarFragment();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.topBarFL, topBarFragment)  // tom container i layout
+                .commit();
+
 
         //Main FL
         mainFragment = new FrontpageFragment();
