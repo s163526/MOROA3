@@ -22,7 +22,7 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
 
         //Buttons
         rightNowButton = root.findViewById(R.id.rightNowButtonFP);
-        findEventButton = root.findViewById(R.id.rightNowButtonFP);
+        findEventButton = root.findViewById(R.id.findEventButtonFP);
         findEventButton.setOnClickListener(this);
         rightNowButton.setOnClickListener(this);
 

@@ -32,6 +32,7 @@ public class BottomBarFragment extends Fragment implements View.OnClickListener 
 
     public void onClick(View v) {
         if (v == findEventButton) {
+
             Fragment findEventFragment = new FindEventFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.mainFL, findEventFragment)  // tom container i layout
