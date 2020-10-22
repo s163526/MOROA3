@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bn_home"
+        android:icon="@drawable/bn_home"
+        android:title="Hjem" />
+
+    <item
+        android:id="@+id/bn_right_now"
+        android:icon="@drawable/bn_right_now"
+        android:title="Lige nu" />
+
+    <item
+        android:id="@+id/bn_find_event"
+        android:icon="@drawable/bn_find_event"
+        android:title="Find event" />
+
+    <item
+        android:id="@+id/bn_my_profile"
+        android:icon="@drawable/bn_my_profile"
+        android:title="Min profil" />
+
+    <item
+        android:id="@+id/bn_menu"
+        android:icon="@drawable/bn_menu"
+        android:title="Menu" />
+
+</menu>
