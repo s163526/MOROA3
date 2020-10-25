@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bn_menu:
                 //Set checked Notification fragment
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
-                return new FrontpageFragment(); //TODO ændre til menu
+                return new MenuFragment();
         }
         //Set checked default home fragment
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
