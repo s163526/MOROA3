@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bn_right_now:
                 //Set checked home fragment
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                return new FrontpageFragment(); // TODO ændre til lige nu
+                return new ShowEventFragment(); // TODO ændre til lige nu
             case R.id.bn_find_event:
                 //Set checked Notification fragment
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);

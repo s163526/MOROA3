@@ -8,4 +8,8 @@
     <string name="gemte_events">Gemte events</string>
     <string name="menu">menu</string>
     <string name="find_event">Find event</string>
+    <string name="_2_3_km">2,3 KM</string>
+    <string name="_10_10_2021">10/10/2021</string>
+    <string name="_20_00_24_00">20:00-24:00</string>
+    <string name="title_p_event">Title på event</string>
 </resources>
