@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 
 //TODO viewpager
 public class FindEventFragment extends Fragment {
@@ -28,6 +31,25 @@ public class FindEventFragment extends Fragment {
         tabFragmentAdapter = new TabFragmentAdapter(this);
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(tabFragmentAdapter);
+
+        TabLayout tabLayout = view.findViewById(R.id.findEventTabLayout);
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) ->
+                getTabText(tab, position)
+        ).attach();
+    }
+
+    public void getTabText(TabLayout.Tab tab, int position ) {
+        switch (position){
+            case 0:
+                tab.setText(getString(R.string.tabWhen));
+                break;
+            case 1:
+                tab.setText(getString(R.string.tabCategory));
+                break;
+            case 2:
+                tab.setText(getString(R.string.tabWhere));
+                break;
+        }
     }
 }
 
@@ -58,4 +80,6 @@ class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapte
     public int getItemCount() {
         return 3;
     }
+
+
 }
