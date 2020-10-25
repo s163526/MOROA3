@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private Fragment getFragment(int itemId) {
+    public Fragment getFragment(int itemId) {
         switch (itemId){
             case R.id.bn_home:
                 //Set checked dashboard fragment
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return new FrontpageFragment();
     }
 
-    private void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.mainFL,fragment)

@@ -34,6 +34,8 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v == findEventButton) {
+
+            //TODO brug den nye struktur til at gøre dette smartere
             Fragment findEventFragment = new FindEventFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.mainFL, findEventFragment)  // tom container i layout
@@ -41,6 +43,7 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         }
 
         else if (v == rightNowButton) {
+            //TODO brug den nye struktur til at gøre dette smartere
             Fragment findEventFragment = new ShowResultFragment();
             getFragmentManager().beginTransaction()
                     .replace(R.id.mainFL, findEventFragment)  // tom container i layout
