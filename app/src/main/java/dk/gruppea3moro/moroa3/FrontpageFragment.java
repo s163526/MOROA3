@@ -26,8 +26,6 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         findEventButton.setOnClickListener(this);
         rightNowButton.setOnClickListener(this);
 
-
-
         return root;
     }
 
@@ -35,19 +33,13 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         if (v == findEventButton) {
 
-            //TODO brug den nye struktur til at gøre dette smartere
-            Fragment findEventFragment = new FindEventFragment();
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.mainFL, findEventFragment)  // tom container i layout
-                    .addToBackStack(null).commit();
+            Fragment f =((MainActivity)getActivity()).getFragment(R.id.findEventFragment);
+            ((MainActivity)getActivity()).loadFragment(f);
         }
 
         else if (v == rightNowButton) {
-            //TODO brug den nye struktur til at gøre dette smartere
-            Fragment findEventFragment = new ShowResultFragment();
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.mainFL, findEventFragment)  // tom container i layout
-                    .addToBackStack(null).commit();
+            Fragment f =((MainActivity)getActivity()).getFragment(R.id.findEventFragment);
+            ((MainActivity)getActivity()).loadFragment(f);
         }
     }
 }
