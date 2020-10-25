@@ -102,11 +102,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return new FindEventFragment();
             case R.id.bn_my_profile:
                 //Set checked Notification fragment
-                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+                bottomNavigationView.getMenu().getItem(3).setChecked(true);
                 return new FrontpageFragment(); //TODO ændre til profil (min side)
             case R.id.bn_menu:
                 //Set checked Notification fragment
-                bottomNavigationView.getMenu().getItem(2).setChecked(true);
+                bottomNavigationView.getMenu().getItem(4).setChecked(true);
                 return new FrontpageFragment(); //TODO ændre til menu
         }
         //Set checked default home fragment
