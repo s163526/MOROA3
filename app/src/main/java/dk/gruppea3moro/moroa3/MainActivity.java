@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     BottomNavigationView bottomNavigationView;
     Deque<Integer> integerDeque = new ArrayDeque<>(5);
-    boolean flag = true;
-    Fragment bottomBarFragment, mainFragment, topBarFragment;
+    Fragment mainFragment, topBarFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,24 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         //Get selected item id
                         int id = item.getItemId();
                         if (integerDeque.contains(id)){
-                            //When deque list contains selected id
-                            if (id == R.id.bn_home){
-                                //When selected id is equal to home fragment id
-                                if (integerDeque.size() != 1){
-                                    //When deque list size is not 1
-                                    if (flag){
-                                        //When flag is true
-                                        //Add home fragment in deque
-                                        integerDeque.addFirst(R.id.bn_home);
-                                        //Set flag false
-                                        flag=false;
-                                    }
-                                }
-                            }
-                            //Remove selected id from deque list
+                            //If deque already contains the item - remove
                             integerDeque.remove(id);
                         }
-                        //Push selected id in deque list
+                        //Push selected id in deque list - so it is on top
                         integerDeque.push(id);
                         //load fragment
                         loadFragment(getFragment(item.getItemId()));
@@ -131,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             loadFragment(getFragment(integerDeque.peek()));
         } else {
             //When deque list is empty
-            //Findish activity
+            //Finish activity
             finish();
         }
     }
