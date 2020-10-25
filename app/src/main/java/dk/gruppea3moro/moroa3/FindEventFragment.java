@@ -1,5 +1,7 @@
 package dk.gruppea3moro.moroa3;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,10 +21,12 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class FindEventFragment extends Fragment {
     TabFragmentAdapter tabFragmentAdapter;
     ViewPager2 viewPager;
+    static TabLayout tabLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_find_event, container, false);
+        tabLayout = root.findViewById(R.id.findEventTabLayout);
         return root;
     }
 
@@ -38,8 +42,8 @@ public class FindEventFragment extends Fragment {
         ).attach();
     }
 
-    public void getTabText(TabLayout.Tab tab, int position ) {
-        switch (position){
+    public void getTabText(TabLayout.Tab tab, int position) {
+        switch (position) {
             case 0:
                 tab.setText(getString(R.string.tabWhen));
                 break;
@@ -49,8 +53,25 @@ public class FindEventFragment extends Fragment {
             case 2:
                 tab.setText(getString(R.string.tabWhere));
                 break;
+            default:
+                break;
         }
     }
+/*
+    public static void changeTabLayoutColor(int position) {
+        switch (position) {
+            case 0:
+                tabLayout.setBackgroundColor(getResources().getColor(R.color.moroSalmonRedBackground));
+                break;
+            case 1:
+                tabLayout.setBackgroundColor(getResources().getColor(R.color.moroYellowBackground));
+                break;
+            case 2:
+                tabLayout.setBackgroundColor(getResources().getColor(R.color.moroPurpleBackground));
+                break;
+
+        }
+    }*/
 }
 
 class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapter {
@@ -80,6 +101,4 @@ class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapte
     public int getItemCount() {
         return 3;
     }
-
-
 }
