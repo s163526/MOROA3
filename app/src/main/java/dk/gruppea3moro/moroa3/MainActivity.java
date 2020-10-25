@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Top bar
+        //Top bar.
         topBarFragment = new TopBarFragment();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.topBarFL, topBarFragment)  // tom container i layout
