@@ -20,7 +20,12 @@ import java.util.Deque;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-    Deque<Integer> integerDeque = new ArrayDeque<>(5);
+
+    public Deque<Integer> getIntegerDeque() {
+        return integerDeque;
+    }
+
+    private Deque<Integer> integerDeque = new ArrayDeque<>(5);
     Fragment mainFragment, topBarFragment;
 
     @Override
