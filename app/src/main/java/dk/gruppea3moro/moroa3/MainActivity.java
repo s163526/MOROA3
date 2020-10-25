@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -68,7 +70,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
         );
 
+        //Get rid of support action bar in top (Telling name of the app)
+        getSupportActionBar().hide();
 
+        //Set color of android's own statusbar in top
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorBlackBackground));
+        }
+
+        //Change color of android's own navigation bar, so it matches our navigation bar
+        //Only if android version is compatible
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.colorBlackBackground));
+        }
     }
 
     private Fragment getFragment(int itemId) {
