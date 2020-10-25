@@ -9,7 +9,8 @@
     <item
         android:id="@+id/bn_right_now"
         android:icon="@drawable/bn_right_now"
-        android:title="Lige nu" />
+        android:title="Lige nu"
+        />
 
     <item
         android:id="@+id/bn_find_event"
