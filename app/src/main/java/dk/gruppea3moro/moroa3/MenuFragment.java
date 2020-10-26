@@ -46,7 +46,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public void replaceFragment() {
         KontaktOsFragment kontaktOsFragment = new KontaktOsFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.menu, kontaktOsFragment ); // give your fragment container id in first parameter
+        transaction.replace(R.id.mainFL, kontaktOsFragment ); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
