@@ -34,19 +34,19 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == kontakt_TextView) {
-            replaceFragment();
+            KontaktOsFragment kontaktOsFragment = new KontaktOsFragment();
+            replaceFragment(kontaktOsFragment);
         } else if (v == om_TextView) {
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.omOsFragment);
-            ((MainActivity)getActivity()).loadFragment(f);
+            OmOsFragment omOsFragment = new OmOsFragment();
+            replaceFragment(omOsFragment);
         } else if (v == tip_Textview) {
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.tipOsFragment);
-            ((MainActivity)getActivity()).loadFragment(f);
+            TipOsFragment tipOsFragment = new TipOsFragment();
+            replaceFragment(tipOsFragment);
         }
     }
-    public void replaceFragment() {
-        KontaktOsFragment kontaktOsFragment = new KontaktOsFragment();
+    public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFL, kontaktOsFragment ); // give your fragment container id in first parameter
+        transaction.replace(R.id.mainFL, fragment ); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
