@@ -13,7 +13,8 @@
         android:id="@+id/findEventTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="@color/colorWhiteText">
+        android:background="@color/moroSalmonRedBackground"
+        app:tabTextColor="@color/colorBlackBackground">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

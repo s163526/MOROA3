@@ -40,6 +40,20 @@ public class FindEventFragment extends Fragment {
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) ->
                 getTabText(tab, position)
         ).attach();
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                System.out.println("position = " + position);
+                changeTabLayoutColor(position);
+            }
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                System.out.println("position = " + position + ", positionOffset = " + positionOffset + ", positionOffsetPixels = " + positionOffsetPixels);
+            }
+        });
     }
 
     public void getTabText(TabLayout.Tab tab, int position) {
@@ -57,10 +71,11 @@ public class FindEventFragment extends Fragment {
                 break;
         }
     }
-/*
-    public static void changeTabLayoutColor(int position) {
+
+    public void changeTabLayoutColor(int position) {
         switch (position) {
             case 0:
+
                 tabLayout.setBackgroundColor(getResources().getColor(R.color.moroSalmonRedBackground));
                 break;
             case 1:
@@ -71,11 +86,11 @@ public class FindEventFragment extends Fragment {
                 break;
 
         }
-    }*/
+    }
 }
 
 class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapter {
-    public TabFragmentAdapter(Fragment fragment) {
+    public  TabFragmentAdapter(Fragment fragment) {
         super(fragment);
     }
 
