@@ -29,8 +29,7 @@
         android:layout_height="32dp"
         android:layout_below="@+id/showevent_imageView"
         android:layout_marginTop="2dp"
-        android:gravity="center"
-        android:text="@string/_2_3_km" />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/dato_textView"
@@ -42,8 +41,7 @@
         android:layout_marginEnd="19dp"
         android:layout_toStartOf="@+id/tidspunkt_textView"
         android:layout_toEndOf="@+id/afstand_textView"
-        android:gravity="center"
-        android:text="@string/_10_10_2021" />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/tidspunkt_textView"
@@ -53,8 +51,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="9dp"
-        android:gravity="center"
-        android:text="@string/_20_00_24_00" />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/titel_textView"
@@ -66,7 +63,6 @@
         android:shadowColor="#000000"
         android:shadowDx="1"
         android:shadowRadius="1"
-        android:text="@string/title_p_event"
         android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
