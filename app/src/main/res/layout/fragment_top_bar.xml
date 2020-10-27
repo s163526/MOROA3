@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TopBarFragment">
 
     <SearchView
+        app:theme="@style/SearchViewStyle"
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layoutDirection="rtl">
+        android:layoutDirection="rtl"
+        android:background="@color/colorBlackBackground">
     </SearchView>
 
 </FrameLayout>

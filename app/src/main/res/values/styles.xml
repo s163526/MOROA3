@@ -7,4 +7,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/colorWhiteText</item>
+        <item name="android:editTextColor">@color/colorWhiteText</item>
+        <item name="android:textColorHint">@color/colorWhiteText</item>
+    </style>
+
+
 </resources>
