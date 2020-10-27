@@ -1,7 +1,5 @@
 package dk.gruppea3moro.moroa3;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -82,7 +80,7 @@ public class FindEventFragment extends Fragment {
                 tabLayout.setBackgroundColor(getResources().getColor(R.color.moroYellowBackground));
                 break;
             case 2:
-                tabLayout.setBackgroundColor(getResources().getColor(R.color.moroPurpleBackground));
+                tabLayout.setBackgroundColor(getResources().getColor(R.color.moroPinkBackground));
                 break;
 
         }

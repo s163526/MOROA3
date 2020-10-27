@@ -7,9 +7,14 @@
     <color name="colorWhiteText">#fffaf0 </color>
     <color name="moroYellowBackground">#f7f5bd</color>
     <color name="moroSalmonRedBackground">#fde7dc</color>
-    <color name="moroPurpleBackground">#e3b9d6</color>
+    <color name="moroPinkBackground">#e3b9d6</color>
     <color name="moroSalmonRedText">#e95634</color>
     <color name="moroYellowText">#f6a31a</color>
-    <color name="moroPurpleText">#991917</color>
+    <color name="moroPinkText">#991917</color>
+    <color name="moroPurpleBackground">#D2C8E4</color>
+    <color name="moroGreenBackground">#D7E9CF</color>
+
+
+
 
 </resources>

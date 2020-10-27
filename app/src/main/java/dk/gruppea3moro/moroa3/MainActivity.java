@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bn_my_profile:
                 //Set checked Notification fragment
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
-                return new FrontpageFragment(); //TODO ændre til profil (min side)
+                return new ShowEventFragment(); //TODO ændre til profil (min side)
             case R.id.bn_menu:
                 //Set checked Notification fragment
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
