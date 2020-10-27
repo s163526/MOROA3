@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Get rid of support action bar in top (Telling name of the app)
         getSupportActionBar().hide();
 
-        //Set color of android's own statusbar in top
+        //Set color of android's own statusbar in top.
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorBlackBackground));
         }
@@ -90,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+
+    //Use to change between fragments and set the bottom navigation bar at the same time.
+    //Only usable for fragments, that are present on bottom navigation bar
     public Fragment getFragment(int itemId) {
         switch (itemId){
             case R.id.bn_home:
@@ -146,5 +150,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void pushToBackstackDequeTop(int fragmentID){
+        //Get selected item id
+        if (integerDeque.contains(fragmentID)){
+            //If deque already contains the item - remove
+            integerDeque.remove(fragmentID);
+        }
+        //Push selected id in deque list - so it is on top
+        integerDeque.push(fragmentID);
+        //load fragment
     }
 }
