@@ -32,6 +32,17 @@
             android:inputType="textPersonName"
             android:hint="@string/titel_p_event" />
 
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:id="@+id/eventChooseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/v_lg_dato"
+            android:background="@color/moroYellowButton"
+            />
+        <!-- TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -54,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </LinearLayout>
+        -->
 
         <EditText
             android:layout_marginTop="10dp"
@@ -80,7 +92,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Kontaktoplysninger" />
+            android:hint="@string/kontaktoplysninger" />
 
         <EditText
             android:layout_marginTop="10dp"
@@ -89,9 +101,11 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Link til event" />
+            android:hint="@string/link_til_event" />
 
+        <!--TODO Knap farverne skal ændres. Noget med google materials der er blevet implementeret-->
         <Button
+
             android:layout_marginTop="14dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
@@ -99,7 +113,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/moroYellowButton"
-            android:text="Send" />
+            android:text="@string/send" />
+
+
 
     </LinearLayout>
 </FrameLayout>

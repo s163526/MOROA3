@@ -19,6 +19,12 @@
     <string name="titel_p_event">Titel på event</string>
     <string name="hvor">Hvor</string>
     <string name="beskrivelse">Beskrivelse</string>
+    <string name="v_lg_dato">Vælg dato</string>
+    <string name="kontaktoplysninger">Kontaktoplysninger</string>
+    <string name="link_til_event">Link til event</string>
+    <string name="send">Send</string>
+    <!--
+    TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
     <string-array name="month">
         <item>Januar</item>
         <item>Februar</item>
@@ -74,6 +80,6 @@
         <item>2024</item>
         <item>2025</item>
     </string-array>
-
+-->
     <!--  TODO skal ændres -->
 </resources>
