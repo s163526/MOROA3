@@ -57,13 +57,13 @@ public class FindEventFragment extends Fragment {
     public void getTabText(TabLayout.Tab tab, int position) {
         switch (position) {
             case 0:
-                tab.setText(getString(R.string.tabWhen));
+                tab.setText(getString(R.string.tab_when));
                 break;
             case 1:
-                tab.setText(getString(R.string.tabCategory));
+                tab.setText(getString(R.string.tab_category));
                 break;
             case 2:
-                tab.setText(getString(R.string.tabWhere));
+                tab.setText(getString(R.string.tab_where));
                 break;
             default:
                 break;

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_where_tab"
+
     tools:context=".WhereTabFragment"
     android:background="@color/moroPinkBackground">
 

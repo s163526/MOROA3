@@ -19,17 +19,17 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tabWhen" />
+            android:text="@string/tab_when" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tabCategory" />
+            android:text="@string/tab_category" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tabWhere" />
+            android:text="@string/tab_where" />
     </com.google.android.material.tabs.TabLayout>
 
 

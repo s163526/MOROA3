@@ -7,21 +7,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-
-public class AboutUsFragment extends Fragment {
-
-    ImageView omOsBillede;
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link MyProfileFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class MyProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_about_us, container, false);
-
-        //omOsBillede.setImageResource(R.drawable.omoms_temp);
-
-        return v;
+        return inflater.inflate(R.layout.fragment_my_profile, container, false);
     }
 }
