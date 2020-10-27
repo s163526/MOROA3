@@ -35,13 +35,13 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         if (v == findEventButton) {
             //Put the selected fragment to top of backstack-deque
             ma.pushToBackstackDequeTop(R.id.fragment_find_event);
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.bn_find_event);
+            Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.bn_find_event);
             ((MainActivity)getActivity()).loadFragment(f);
         }
 
         else if (v == rightNowButton) {
             ma.pushToBackstackDequeTop(R.id.fragment_show_result);
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.bn_right_now);
+            Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.bn_right_now);
             ((MainActivity)getActivity()).loadFragment(f);
         }
     }

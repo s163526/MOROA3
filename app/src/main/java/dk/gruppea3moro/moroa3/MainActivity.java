@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -60,16 +59,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
                         //Get selected item id
                         int id = item.getItemId();
-                        if (integerDeque.contains(id)){
-                            //If deque already contains the item - remove
-                            integerDeque.remove(id);
-                        }
-                        //Push selected id in deque list - so it is on top
-                        integerDeque.push(id);
+                        int fragmentId = getFragmentLayoutId(id);
+
+                        //Push fragment id to backstack deque
+                        pushToBackstackDequeTop(fragmentId);
+
                         //load fragment
-                        loadFragment(getFragment(item.getItemId()));
+                        loadFragment(getFragmentFromLayoutId(fragmentId));
                         return true;
                     }
                 }
@@ -91,36 +90,77 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    //Returns layout id of the fragment corresponding to the item selected in bottom navigation bar
+    public int getFragmentLayoutId(int bnItemId) {
+        switch (bnItemId){
+            case R.id.bn_home:
+                return R.id.fragment_frontpage;
+            case R.id.bn_right_now:
+                return R.id.fragment_right_now;
+            case R.id.bn_find_event:
+                return R.id.fragment_find_event;
+            case R.id.bn_my_profile:
+                return R.id.fragment_my_profile;
+            case R.id.bn_menu:
+                return R.id.fragment_menu;
+            default:
+                //Indicate that something went wrong
+                return 1;
+        }
+    }
+
+    public Fragment getFragmentFromLayoutId(int layoutId) {
+        switch (layoutId) {
+            case R.id.fragment_frontpage:
+                return new FrontpageFragment();
+            case R.id.fragment_show_result:
+                return new ShowResultFragment();
+            case R.id.fragment_find_event:
+                return new FindEventFragment();
+            case R.id.fragment_my_profile:
+                return new MyProfileFragment();
+            case R.id.fragment_menu:
+                return new MenuFragment();
+            default:
+                //If something went wrong
+                return new FrontpageFragment();
+        }
+    }
+
 
     //Use to change between fragments and set the bottom navigation bar at the same time.
     //Only usable for fragments, that are present on bottom navigation bar
-    public Fragment getFragment(int itemId) {
-        switch (itemId){
-            case R.id.bn_home:
-                //Set checked dashboard fragment
+    public void setBottonNavSelection(int fragmentId) {
+        switch (fragmentId){
+            case R.id.fragment_frontpage:
+                //Set checked frontpage
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
-                return new FrontpageFragment();
-            case R.id.bn_right_now:
-                //Set checked home fragment
+                break;
+            case R.id.fragment_right_now:
+                //Set checked right now
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                return new ShowEventFragment(); // TODO ændre til lige nu
-            case R.id.bn_find_event:
-                //Set checked Notification fragment
+                break;
+            case R.id.fragment_find_event:
+            case R.id.fragment_category_tab:
+            case R.id.fragment_when_tab:
+            case R.id.fragment_where_tab:
+                //Set checked find event
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                return new FindEventFragment();
-            case R.id.bn_my_profile:
-                //Set checked Notification fragment
+                break;
+            case R.id.fragment_my_profile:
+                //Set checked my profile
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
-                return new ShowEventFragment(); //TODO ændre til profil (min side)
-            case R.id.bn_menu:
-                //Set checked Notification fragment
+                break;
+            case R.id.fragment_menu:
+            case R.id.fragment_about_us:
+            case R.id.fragment_contact_us:
+            case R.id.fragment_tip_us:
+               //Set checked menu
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
-                return new MenuFragment();
+                break;
+            default:
+                //If it's not one of the bottom-nav fragments - do nothing
         }
-        //Set checked default home fragment
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        //Return home fragment
-        return new FrontpageFragment();
     }
 
     public void loadFragment(Fragment fragment) {
@@ -136,7 +176,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(!integerDeque.isEmpty()){
             //When deque is not empty
             //load fragment
-            loadFragment(getFragment(integerDeque.peek()));
+            int id = integerDeque.peek();
+            setBottonNavSelection(id);
+            loadFragment(getFragmentFromLayoutId(id));
         } else {
             //When deque list is empty
             //Finish activity
@@ -158,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //If deque already contains the item - remove
             integerDeque.remove(fragmentID);
         }
+
         //Push selected id in deque list - so it is on top
         integerDeque.push(fragmentID);
         //load fragment
