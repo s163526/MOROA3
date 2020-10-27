@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class ContactUsFragment extends Fragment implements View.OnClickListener{
+public class ContactUsFragment extends Fragment implements View.OnClickListener {
     TextView tipus_TextView;
 
     @Override
@@ -35,9 +35,10 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener{
             replaceFragment(tipUsFragment);
         }
     }
+
     public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFL, fragment ); // give your fragment container id in first parameter
+        transaction.replace(R.id.mainFL, fragment); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
