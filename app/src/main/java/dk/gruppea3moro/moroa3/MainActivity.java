@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomNavigationView = findViewById(R.id.bottomnavigation);
 
         //Add home fragment in deque list
-        integerDeque.push(R.id.bn_home);
+        integerDeque.push(R.id.fragment_frontpage);
         //Load home fragment
         loadFragment(new FrontpageFragment());
         //Set home as default fragment
@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (layoutId) {
             case R.id.fragment_frontpage:
                 return new FrontpageFragment();
+            case R.id.fragment_right_now:
+                return new RightNowFragment();
             case R.id.fragment_show_result:
                 return new ShowResultFragment();
             case R.id.fragment_find_event:
@@ -121,6 +123,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return new MyProfileFragment();
             case R.id.fragment_menu:
                 return new MenuFragment();
+            case R.id.fragment_contact_us:
+                return new ContactUsFragment();
+            case R.id.fragment_tip_us:
+                return new TipUsFragment();
+            case R.id.fragment_about_us:
+                return new AboutUsFragment();
             default:
                 //If something went wrong
                 return new FrontpageFragment();
@@ -141,9 +149,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
                 break;
             case R.id.fragment_find_event:
-            case R.id.fragment_category_tab:
-            case R.id.fragment_when_tab:
-            case R.id.fragment_where_tab:
+            //case R.id.fragment_category_tab:
+            //case R.id.fragment_when_tab:
+            //case R.id.fragment_where_tab:
                 //Set checked find event
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
                 break;

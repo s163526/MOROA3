@@ -5,7 +5,7 @@
     android:id="@+id/fragment_about_us"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/moroPinkBackground"
+    android:background="@color/moroPurpleBackground"
     tools:context=".AboutUsFragment">
 
     <TextView
