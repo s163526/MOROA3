@@ -31,14 +31,17 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
+        MainActivity ma = ((MainActivity)getActivity());
         if (v == findEventButton) {
-
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.findEventFragment);
+            //Put the selected fragment to top of backstack-deque
+            ma.pushToBackstackDequeTop(R.id.fragment_find_event);
+            Fragment f =((MainActivity)getActivity()).getFragment(R.id.bn_find_event);
             ((MainActivity)getActivity()).loadFragment(f);
         }
 
         else if (v == rightNowButton) {
-            Fragment f =((MainActivity)getActivity()).getFragment(R.id.findEventFragment);
+            ma.pushToBackstackDequeTop(R.id.fragment_show_result);
+            Fragment f =((MainActivity)getActivity()).getFragment(R.id.bn_right_now);
             ((MainActivity)getActivity()).loadFragment(f);
         }
     }
