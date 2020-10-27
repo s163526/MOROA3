@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/v_lg_dato"
-            android:background="@color/moroYellowButton"
+            app:backgroundTint="@color/moroYellowButton"
             />
         <!-- TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
         <LinearLayout
@@ -103,7 +103,6 @@
             android:inputType="textPersonName"
             android:hint="@string/link_til_event" />
 
-        <!--TODO Knap farverne skal ændres. Noget med google materials der er blevet implementeret-->
         <Button
 
             android:layout_marginTop="14dp"
@@ -112,7 +111,7 @@
             android:id="@+id/eventSendButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/moroYellowButton"
+            app:backgroundTint="@color/moroYellowButton"
             android:text="@string/send" />
 
 
