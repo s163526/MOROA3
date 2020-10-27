@@ -8,12 +8,81 @@
     <string name="gemte_events">Gemte events</string>
     <string name="menu">menu</string>
     <string name="find_event">Find event</string>
-    <string name="tab_where">HVOR</string>
-    <string name="tab_when">HVORNÅR</string>
-    <string name="tab_category">KATEGORI</string>
+    <string name="tabWhere">HVOR</string>
+    <string name="tabWhen">HVORNÅR</string>
+    <string name="tabCategory">KATEGORI</string>
     <string name="om_os">OM OS</string>
+   <string name="om_os_maintext">MORO er en ny kultur-platform for unge, der ønsker et skræddersyet overblik over oplevelser i det københavnske kulturliv. \n \n Vores team består af 8 unge iværksættere, der tilsammen udgør MORO. Vi var trætte af altid at skulle lede gennem utallige sites og hjemmesider for at finde og udforske de events, der interesserer os. Vi oplevede, at vi tit gik glip af events, fordi vi ikke vidste, hvornår de blev afholdt, eller fordi vi først fik kendskab til dem, efter de var blevet afholdt. Vi savnede overblik og en platform, hvor man nemt og på overskuelig vis, kunne filtrere sin søgning og få optimeret information om lige præcis de events, vi gerne ville deltage i. Vi har derfor startet MORO.</string>
     <string name="om_os_maintext">MORO er en ny kultur-platform for unge, der ønsker et skræddersyet overblik over oplevelser i det københavnske kulturliv.
 Vores team består af 8 unge iværksættere, der tilsammen udgør MORO. Vi var trætte af altid at skulle lede gennem utallige sites og hjemmesider for at finde og udforske de events, der interesserer os. Vi oplevede, at vi tit gik glip af events, fordi vi ikke vidste, hvornår de blev afholdt, eller fordi vi først fik kendskab til dem, efter de var blevet afholdt. Vi savnede overblik og en platform, hvor man nemt og på overskuelig vis, kunne filtrere sin søgning og få optimeret information om lige præcis de events, vi gerne ville deltage i. Vi har derfor startet MORO.</string>
     <string name="kontakt_os">KONTAKT OS</string>
+    <string name="choose_Date">Vælg</string> <!--  TODO skal ændres -->
+    <string name="tip_os">TIP OS</string>
+    <string name="titel_p_event">Titel på event</string>
+    <string name="hvor">Hvor</string>
+    <string name="beskrivelse">Beskrivelse</string>
+    <string name="v_lg_dato">Vælg dato</string>
+    <string name="kontaktoplysninger">Kontaktoplysninger</string>
+    <string name="link_til_event">Link til event</string>
+    <string name="send">Send</string>
+    <!--
+    TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
+    <string-array name="month">
+        <item>Januar</item>
+        <item>Februar</item>
+        <item>Marts</item>
+        <item>April</item>
+        <item>Maj</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>August</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="date">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+    <string-array name="year">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+    </string-array>
+-->
+    <!--  TODO skal ændres -->
     <string name="tip_os">TIP OS</string>
 </resources>

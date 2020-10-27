@@ -9,10 +9,26 @@
     tools:context=".ContactUsFragment">
 
     <TextView
+        android:id="@+id/border_textView"
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/tipusborder"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tipus_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tipus_textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="385dp"
         android:layout_height="65dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="96dp"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowDx="1.5"
@@ -22,7 +38,6 @@
         android:textAllCaps="true"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.206"
         tools:src="@tools:sample/avatars" />
 
     <ImageView
@@ -62,10 +77,10 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tipus_textView"
         android:layout_width="235dp"
         android:layout_height="40dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="104dp"
         android:background="#230351"
         android:gravity="center"
         android:text="@string/tip_os"

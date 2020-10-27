@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_when_tab"
-    tools:context=".WhenTabFragment"
-    android:background="@color/moroSalmonRedBackground">
+    android:background="@color/moroSalmonRedBackground"
+    tools:context=".WhenTabFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
 
-</FrameLayout>
+    <DatePicker
+        android:id="@+id/when_datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1.15"
+        android:scaleY="1.23"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <Button
+        android:id="@+id/pickDate_button"
+        android:layout_width="350dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/choose_Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/when_datePicker" />
+
+    <TextView
+        android:id="@+id/chosenDate_TextView"
+        android:layout_width="190dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="34dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickDate_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
