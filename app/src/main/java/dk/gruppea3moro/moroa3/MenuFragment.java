@@ -34,14 +34,14 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == kontakt_TextView) {
-            KontaktOsFragment kontaktOsFragment = new KontaktOsFragment();
-            replaceFragment(kontaktOsFragment);
+            ContactUsFragment contactUsFragment = new ContactUsFragment();
+            replaceFragment(contactUsFragment);
         } else if (v == om_TextView) {
-            OmOsFragment omOsFragment = new OmOsFragment();
-            replaceFragment(omOsFragment);
+            AboutUsFragment aboutUsFragment = new AboutUsFragment();
+            replaceFragment(aboutUsFragment);
         } else if (v == tip_Textview) {
-            TipOsFragment tipOsFragment = new TipOsFragment();
-            replaceFragment(tipOsFragment);
+            TipUsFragment tipUsFragment = new TipUsFragment();
+            replaceFragment(tipUsFragment);
         }
     }
     public void replaceFragment(Fragment fragment) {
