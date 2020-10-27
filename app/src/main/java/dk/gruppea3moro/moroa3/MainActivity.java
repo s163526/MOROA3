@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Get rid of support action bar in top (Telling name of the app)
         getSupportActionBar().hide();
 
-        //Set color of android's own statusbar in top
+        //Set color of android's own statusbar in top.
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.colorBlackBackground));
         }
