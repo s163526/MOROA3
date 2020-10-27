@@ -11,5 +11,6 @@
     <color name="moroSalmonRedText">#e95634</color>
     <color name="moroYellowText">#f6a31a</color>
     <color name="moroPurpleText">#991917</color>
+    <color name="moroYellowButton">#F6A31A</color>
 
 </resources>
