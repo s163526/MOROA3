@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
-    TextView kontakt_TextView, om_TextView, tip_Textview;
+    TextView contact_TextView, about_TextView, tip_Textview;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -20,12 +20,12 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_menu, container, false);
-        kontakt_TextView = root.findViewById(R.id.kontakt_textView);
-        om_TextView = root.findViewById(R.id.om_textView);
+        contact_TextView = root.findViewById(R.id.kontakt_textView);
+        about_TextView = root.findViewById(R.id.om_textView);
         tip_Textview = root.findViewById(R.id.tip_textView);
 
-        kontakt_TextView.setOnClickListener(this);
-        om_TextView.setOnClickListener(this);
+        contact_TextView.setOnClickListener(this);
+        about_TextView.setOnClickListener(this);
         tip_Textview.setOnClickListener(this);
 
         return root;
@@ -33,13 +33,17 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v == kontakt_TextView) {
+        MainActivity ma = ((MainActivity)getActivity());
+        if (v == contact_TextView) {
+            ma.pushToBackstackDequeTop(R.id.fragment_contact_us);
             ContactUsFragment contactUsFragment = new ContactUsFragment();
             replaceFragment(contactUsFragment);
-        } else if (v == om_TextView) {
+        } else if (v == about_TextView) {
+            ma.pushToBackstackDequeTop(R.id.fragment_about_us);
             AboutUsFragment aboutUsFragment = new AboutUsFragment();
             replaceFragment(aboutUsFragment);
         } else if (v == tip_Textview) {
+            ma.pushToBackstackDequeTop(R.id.fragment_tip_us);
             TipUsFragment tipUsFragment = new TipUsFragment();
             replaceFragment(tipUsFragment);
         }
