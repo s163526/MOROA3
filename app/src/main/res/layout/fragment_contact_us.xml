@@ -13,7 +13,7 @@
         android:layout_width="235dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/tipusborder"
+        android:background="@drawable/blackborder"
         android:gravity="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/category1_textView"
         android:layout_width="385dp"
         android:layout_height="65dp"
         android:layout_marginTop="96dp"
@@ -62,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/category1_textView"
         app:layout_constraintVertical_bias="0.206"
         tools:src="@tools:sample/avatars" />
 

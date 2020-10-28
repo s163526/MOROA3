@@ -23,6 +23,18 @@
     <string name="kontaktoplysninger">Kontaktoplysninger</string>
     <string name="link_til_event">Link til event</string>
     <string name="send">Send</string>
+    <string name="mad_og_drikke">Mad og drikke</string>
+    <string name="sport_og_spil">Sport og spil</string>
+    <string name="mode">Mode</string>
+    <string name="fest">Fest</string>
+    <string name="teater"><![CDATA[Teater & forestillinger]]></string>
+    <string name="gratis">Gratis</string>
+    <string name="comedy">Comedy</string>
+    <string name="talk">Talk</string>
+    <string name="film">Film</string>
+    <string name="koncert">Koncert</string>
+    <string name="udstilling_og_kunst">Udstilling og kunst</string>
+    <string name="litteratur">Litteratur</string>
     <!--
     TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
     <string-array name="month">
