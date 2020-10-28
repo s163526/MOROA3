@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fragment_frontpage:
                 return new FrontpageFragment();
             case R.id.fragment_right_now:
-                return new RightNowFragment();
+                return new ShowEventFragment();
             case R.id.fragment_show_result:
                 return new ShowResultFragment();
             case R.id.fragment_find_event:
