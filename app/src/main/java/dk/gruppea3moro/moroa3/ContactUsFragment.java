@@ -19,7 +19,7 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener 
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root = inflater.inflate(R.layout.fragment_kontakt_os, container, false);
+        View root = inflater.inflate(R.layout.fragment_contact_us, container, false);
 
         tipus_TextView = root.findViewById(R.id.tipus_textView);
 
