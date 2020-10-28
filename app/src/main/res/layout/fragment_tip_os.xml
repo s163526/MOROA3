@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/v_lg_dato"
-            app:backgroundTint="@color/moroYellowText"
+            app:backgroundTint="@color/moroYellowButton"
             />
         <!-- TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
         <LinearLayout
@@ -111,7 +111,7 @@
             android:id="@+id/eventSendButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/moroYellowText"
+            app:backgroundTint="@color/moroYellowButton"
             android:text="@string/send" />
 
 
