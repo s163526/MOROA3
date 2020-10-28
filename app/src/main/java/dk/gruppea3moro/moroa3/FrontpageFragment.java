@@ -33,7 +33,7 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         MainActivity ma = ((MainActivity)getActivity());
         if (v == findEventButton) {
-            //Put the selected fragment to top of backstack-deque
+            //Put the selected fragment to top of backstack-deque.
             ma.pushToBackstackDequeTop(R.id.fragment_find_event);
             Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.fragment_find_event);
             ((MainActivity)getActivity()).loadFragment(f);
