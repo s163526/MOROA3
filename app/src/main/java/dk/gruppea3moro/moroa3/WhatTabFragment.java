@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class CategoryTabFragment extends Fragment implements View.OnClickListener {
+public class WhatTabFragment extends Fragment implements View.OnClickListener {
 
     TextView category1_textView, category2_textView, category3_textView, category4_textView,
             category5_textView, category6_textView, category7_textView, category8_textView,
@@ -20,7 +20,7 @@ public class CategoryTabFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_category_tab, container, false);
+        View root = inflater.inflate(R.layout.fragment_what_tab, container, false);
 
         //TODO erstat med GridView
 

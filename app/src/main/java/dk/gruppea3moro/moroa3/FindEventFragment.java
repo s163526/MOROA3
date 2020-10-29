@@ -60,7 +60,7 @@ public class FindEventFragment extends Fragment {
                 tab.setText(getString(R.string.tab_when));
                 break;
             case 1:
-                tab.setText(getString(R.string.tab_category));
+                tab.setText(getString(R.string.tab_what));
                 break;
             case 2:
                 tab.setText(getString(R.string.tab_where));
@@ -101,7 +101,7 @@ class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapte
                 fragment = new WhenTabFragment();
                 break;
             case 1:
-                fragment = new CategoryTabFragment();
+                fragment = new WhatTabFragment();
                 break;
             case 2:
                 fragment = new WhereTabFragment();
