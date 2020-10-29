@@ -35,12 +35,19 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         if (v == findEventButton) {
             //Put the selected fragment to top of backstack-deque.
             ma.pushToBackstackDequeTop(R.id.fragment_find_event);
+            //Set selection on bottom navigation bar
+            ma.setBottonNavSelection(R.id.fragment_find_event);
+            //Get fragment object and load
             Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.fragment_find_event);
             ((MainActivity)getActivity()).loadFragment(f);
         }
 
         else if (v == rightNowButton) {
-            ma.pushToBackstackDequeTop(R.id.fragment_show_result);
+            //Put the selected fragment to top of backstack-deque.
+            ma.pushToBackstackDequeTop(R.id.fragment_right_now);
+            //Set selection on bottom navigation bar
+            ma.setBottonNavSelection(R.id.fragment_right_now);
+            //Get fragment object and load
             Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.fragment_right_now);
             ((MainActivity)getActivity()).loadFragment(f);
         }
