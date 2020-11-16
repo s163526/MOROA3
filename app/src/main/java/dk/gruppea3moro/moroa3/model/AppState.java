@@ -1,5 +1,6 @@
 package dk.gruppea3moro.moroa3.model;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -22,11 +23,10 @@ import dk.gruppea3moro.moroa3.TipUsFragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class AppState {
+public class AppState extends Application {
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
-    private AppState(){
-    }
+    private static Context context;
 
     //STATIC METHODS--------------------------------------------------------------------------------
     public static AppState get(){
@@ -81,7 +81,7 @@ public class AppState {
         }
     }
 
-    public static void saveToPM(Context context){
+    public static void saveToPM(){
         SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
@@ -90,7 +90,7 @@ public class AppState {
         prefsEditor.commit();
     }
 
-    public static void readFromPM(Context context){
+    public static void readFromPM(){
         SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("AppState", "");
@@ -103,7 +103,7 @@ public class AppState {
         //clear instance
         instance = new AppState();
         //Save instance
-        saveToPM(context);
+        saveToPM();
     }
 
 
@@ -111,6 +111,12 @@ public class AppState {
     //NON STATIC METHODS----------------------------------------------------------------------------
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
+    }
+
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        resetAppState(context);
     }
 
     public void pushToBackstackDequeTop(int fragmentID){
