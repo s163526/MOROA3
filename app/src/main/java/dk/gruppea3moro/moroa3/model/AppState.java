@@ -26,7 +26,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class AppState extends Application {
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
-    private static Context context;
+
 
     //STATIC METHODS--------------------------------------------------------------------------------
     public static AppState get(){
@@ -81,7 +81,10 @@ public class AppState extends Application {
         }
     }
 
-    public static void saveToPM(){
+    //NON STATIC METHODS----------------------------------------------------------------------------
+
+
+    public void saveToPM(Context context){
         SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
@@ -90,7 +93,7 @@ public class AppState extends Application {
         prefsEditor.commit();
     }
 
-    public static void readFromPM(){
+    public void readFromPM(Context context){
         SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("AppState", "");
@@ -98,25 +101,18 @@ public class AppState extends Application {
         System.out.println("");
     }
 
-    //TODO denne bruges ikke lige nu
-    public static void resetAppState(Context context){
-        //clear instance
-        instance = new AppState();
-        //Save instance
-        saveToPM();
-    }
 
 
-
-    //NON STATIC METHODS----------------------------------------------------------------------------
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
     }
 
     public void onCreate() {
         super.onCreate();
-        context = getApplicationContext();
-        resetAppState(context);
+        //clear instance
+        instance = new AppState();
+        //Save instance
+        saveToPM(getApplicationContext());
     }
 
     public void pushToBackstackDequeTop(int fragmentID){
