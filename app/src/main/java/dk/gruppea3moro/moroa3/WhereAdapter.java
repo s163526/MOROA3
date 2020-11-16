@@ -9,12 +9,13 @@ import android.widget.TextView;
 public class WhereAdapter extends BaseAdapter {
 
     private final Context mContext;
-    private final String places[] ={"Nørrebro", "Islandsbrygge", "Indre By", "Østerbro", "Nordvest", "Valby", "Brønshøj & Husum", "Amager", "Vesterbro", "Vanløse", "Christianshavn", "Refshaleøen"} ;
+    private final String[] mPlaces;
 
 
     // 1
     public WhereAdapter(Context context, String[] places) {
         this.mContext = context;
+        this.mPlaces = places;
     }
 
     @Override
