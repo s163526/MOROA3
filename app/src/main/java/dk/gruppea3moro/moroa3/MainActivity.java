@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Bottombar
         bottomNavigationView = findViewById(R.id.bottomnavigation);
 
-        //Add home fragment in deque list
-        AppState.get().getIntegerDeque().push(R.id.fragment_frontpage);
         //Load home fragment
         loadFragment(new FrontpageFragment());
         //Set home as default fragment
@@ -59,13 +57,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //Get selected item id
                         int id = item.getItemId();
-                        int fragmentId = AppState.get().getFragmentLayoutId(id);
+                        int fragmentId = AppState.getFragmentLayoutId(id);
 
                         //Push fragment id to backstack deque
                         AppState.get().pushToBackstackDequeTop(fragmentId);
 
                         //load fragment
-                        loadFragment(AppState.get().getFragmentFromLayoutId(fragmentId));
+                        loadFragment(AppState.getFragmentFromLayoutId(fragmentId));
                         return true;
                     }
                 }
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //load fragment
             int id = integerDeque.peek();
             setBottonNavSelection(id);
-            loadFragment(AppState.get().getFragmentFromLayoutId(id));
+            loadFragment(AppState.getFragmentFromLayoutId(id));
         } else {
             //When deque list is empty
             //Finish activity
@@ -158,16 +156,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onStart() {
-        //Read AppState from PreferenceManaer - it may be empty or it may be saved from when app was in use
-        AppState.readFromPM();
+        //Read AppState from PreferenceManager - it may be empty or it may be saved from when app was in use
+        AppState.get().readFromPM(getApplicationContext());
+        if (AppState.get().getIntegerDeque().size()==0){
+            //Add home fragment in deque list
+            AppState.get().getIntegerDeque().push(R.id.fragment_frontpage);
+        }
+
+        //Call onStart() from super class
         super.onStart();
+
+        //Load top fragment
+        int fragmentId =AppState.get().getIntegerDeque().peek();
+        Fragment currentFragment = AppState.getFragmentFromLayoutId(fragmentId);
+        loadFragment(currentFragment);
     }
 
     @Override
     public void onStop() {
         //If mainactivity is stopped - the app is no longer in RAM
         //The state is saved to PreferenceManager
-        AppState.saveToPM();
+        AppState.get().saveToPM(getApplicationContext());
         super.onStop();
     }
 
