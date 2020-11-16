@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import dk.gruppea3moro.moroa3.model.AppState;
+
 public class FrontpageFragment extends Fragment implements View.OnClickListener {
 
     Button rightNowButton, findEventButton;
@@ -34,21 +36,21 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         MainActivity ma = ((MainActivity)getActivity());
         if (v == findEventButton) {
             //Put the selected fragment to top of backstack-deque.
-            ma.pushToBackstackDequeTop(R.id.fragment_find_event);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_find_event);
             //Set selection on bottom navigation bar
             ma.setBottonNavSelection(R.id.fragment_find_event);
             //Get fragment object and load
-            Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.fragment_find_event);
+            Fragment f =AppState.getFragmentFromLayoutId(R.id.fragment_find_event);
             ((MainActivity)getActivity()).loadFragment(f);
         }
 
         else if (v == rightNowButton) {
             //Put the selected fragment to top of backstack-deque.
-            ma.pushToBackstackDequeTop(R.id.fragment_right_now);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_right_now);
             //Set selection on bottom navigation bar
             ma.setBottonNavSelection(R.id.fragment_right_now);
             //Get fragment object and load
-            Fragment f =((MainActivity)getActivity()).getFragmentFromLayoutId(R.id.fragment_right_now);
+            Fragment f =AppState.get().getFragmentFromLayoutId(R.id.fragment_right_now);
             ((MainActivity)getActivity()).loadFragment(f);
         }
     }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,16 +16,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import dk.gruppea3moro.moroa3.model.AppState;
+
 //TODO burgermenu(kontakt os osv), søge menu med filtre, evt?
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
-
-    public Deque<Integer> getIntegerDeque() {
-        return integerDeque;
-    }
-
-    private Deque<Integer> integerDeque = new ArrayDeque<>(5);
     Fragment mainFragment, topBarFragment;
 
     @Override
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomNavigationView = findViewById(R.id.bottomnavigation);
 
         //Add home fragment in deque list
-        integerDeque.push(R.id.fragment_frontpage);
+        AppState.get().getIntegerDeque().push(R.id.fragment_frontpage);
         //Load home fragment
         loadFragment(new FrontpageFragment());
         //Set home as default fragment
@@ -62,13 +59,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //Get selected item id
                         int id = item.getItemId();
-                        int fragmentId = getFragmentLayoutId(id);
+                        int fragmentId = AppState.get().getFragmentLayoutId(id);
 
                         //Push fragment id to backstack deque
-                        pushToBackstackDequeTop(fragmentId);
+                        AppState.get().pushToBackstackDequeTop(fragmentId);
 
                         //load fragment
-                        loadFragment(getFragmentFromLayoutId(fragmentId));
+                        loadFragment(AppState.get().getFragmentFromLayoutId(fragmentId));
                         return true;
                     }
                 }
@@ -88,53 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             getWindow().setNavigationBarColor(getResources().getColor(R.color.colorBlackBackground));
         }
     }
-
-
-    //Returns layout id of the fragment corresponding to the item selected in bottom navigation bar
-    public int getFragmentLayoutId(int bnItemId) {
-        switch (bnItemId){
-            case R.id.bn_home:
-                return R.id.fragment_frontpage;
-            case R.id.bn_right_now:
-                return R.id.fragment_right_now;
-            case R.id.bn_find_event:
-                return R.id.fragment_find_event;
-            case R.id.bn_my_profile:
-                return R.id.fragment_my_profile;
-            case R.id.bn_menu:
-                return R.id.fragment_menu;
-            default:
-                //Indicate that something went wrong
-                return 1;
-        }
-    }
-
-    public Fragment getFragmentFromLayoutId(int layoutId) {
-        switch (layoutId) {
-            case R.id.fragment_frontpage:
-                return new FrontpageFragment();
-            case R.id.fragment_right_now:
-                return new ShowEventFragment();
-            case R.id.fragment_show_result:
-                return new ShowResultFragment();
-            case R.id.fragment_find_event:
-                return new FindEventFragment();
-            case R.id.fragment_my_profile:
-                return new MyProfileFragment();
-            case R.id.fragment_menu:
-                return new MenuFragment();
-            case R.id.fragment_contact_us:
-                return new ContactUsFragment();
-            case R.id.fragment_tip_us:
-                return new TipUsFragment();
-            case R.id.fragment_about_us:
-                return new AboutUsFragment();
-            default:
-                //If something went wrong
-                return new FrontpageFragment();
-        }
-    }
-
 
     //Use to change between fragments and set the bottom navigation bar at the same time.
     //Only usable for fragments, that are present on bottom navigation bar
@@ -179,14 +129,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onBackPressed(){
+        //Get integerDeqye from AppState
+        Deque<Integer> integerDeque = AppState.get().getIntegerDeque();
+
         //Pop to previous fragment
         integerDeque.pop();
+
         if(!integerDeque.isEmpty()){
             //When deque is not empty
             //load fragment
             int id = integerDeque.peek();
             setBottonNavSelection(id);
-            loadFragment(getFragmentFromLayoutId(id));
+            loadFragment(AppState.get().getFragmentFromLayoutId(id));
         } else {
             //When deque list is empty
             //Finish activity
@@ -202,15 +156,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void pushToBackstackDequeTop(int fragmentID){
-        //Get selected item id
-        if (integerDeque.contains(fragmentID)){
-            //If deque already contains the item - remove
-            integerDeque.remove(fragmentID);
-        }
-
-        //Push selected id in deque list - so it is on top
-        integerDeque.push(fragmentID);
-        //load fragment
+    @Override
+    public void onStart() {
+        //Read AppState from PreferenceManaer - it may be empty or it may be saved from when app was in use
+        AppState.readFromPM(MainActivity.this);
+        super.onStart();
     }
+
+    @Override
+    public void onStop() {
+        //If mainactivity is stopped - the app is no longer in RAM
+        //The state is saved to PreferenceManager
+        AppState.saveToPM(MainActivity.this);
+        super.onStop();
+    }
+
+
+
+
+
 }
