@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import dk.gruppea3moro.moroa3.model.AppState;
+
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
     TextView contact_TextView, about_TextView, tip_Textview;
@@ -35,15 +37,15 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         MainActivity ma = ((MainActivity)getActivity());
         if (v == contact_TextView) {
-            ma.pushToBackstackDequeTop(R.id.fragment_contact_us);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_contact_us);
             ContactUsFragment contactUsFragment = new ContactUsFragment();
             replaceFragment(contactUsFragment);
         } else if (v == about_TextView) {
-            ma.pushToBackstackDequeTop(R.id.fragment_about_us);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_about_us);
             AboutUsFragment aboutUsFragment = new AboutUsFragment();
             replaceFragment(aboutUsFragment);
         } else if (v == tip_Textview) {
-            ma.pushToBackstackDequeTop(R.id.fragment_tip_us);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_tip_us);
             TipUsFragment tipUsFragment = new TipUsFragment();
             replaceFragment(tipUsFragment);
         }
