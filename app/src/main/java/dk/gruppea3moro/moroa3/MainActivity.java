@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -154,6 +155,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
     }
+
+    @Override
+    public void onStart() {
+        //Read AppState from PreferenceManaer - it may be empty or it may be saved from when app was in use
+        AppState.readFromPM(MainActivity.this);
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        //If mainactivity is stopped - the app is no longer in RAM
+        //The state is saved to PreferenceManager
+        AppState.saveToPM(MainActivity.this);
+        super.onStop();
+    }
+
+
+
 
 
 }
