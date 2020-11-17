@@ -5,33 +5,18 @@
     android:layout_height="wrap_content"
     android:padding="5dp">
 
-    <ImageView
-        android:id="@+id/listeelem_billede"
-        android:layout_width="60dip"
-        android:layout_height="40dip"
-        android:layout_margin="5dip"
-        android:scaleType="centerCrop"/>
-
     <TextView
         android:id="@+id/listeelem_overskrift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/listeelem_billede"
-        android:layout_toEndOf="@+id/listeelem_billede"
-        android:layout_toRightOf="@+id/listeelem_billede"
+        android:gravity="center"
         android:text="overskrift"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/listeelem_beskrivelse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/listeelem_overskrift"
-        android:layout_toRightOf="@+id/listeelem_billede"
-        android:text="beskrivelse"
-        android:textSize="12sp"/>
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:background="@drawable/blackborder"
+        android:paddingBottom="25dp"
+        android:paddingTop="25dp"/>
 
 
 </RelativeLayout>
