@@ -1,14 +1,14 @@
 package dk.gruppea3moro.moroa3.model;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
-import com.google.gson.Gson;
 
 import dk.gruppea3moro.moroa3.AboutUsFragment;
 import dk.gruppea3moro.moroa3.ContactUsFragment;
@@ -27,6 +27,7 @@ public class AppState //extends Application
 {
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
+    FindEventModel findEventModel;
 
 
 
@@ -130,6 +131,18 @@ public class AppState //extends Application
         //Push selected id in deque list - so it is on top
         integerDeque.push(fragmentID);
         //load fragment
+    }
+
+
+    public FindEventModel getFindEventModel(){
+        if (findEventModel==null){
+            findEventModel=new FindEventModel();
+        }
+        return findEventModel;
+    }
+
+    public void resetFindEventModel(){
+        this.findEventModel=null;
     }
 
 }
