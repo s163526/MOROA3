@@ -107,16 +107,15 @@ public class AppState //extends Application
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
     }
-/*
-    public void onCreate() {
-        super.onCreate();
+
+    public void resetPM(Context context) {
         //clear instance
         instance = new AppState();
         //Save instance
-        saveToPM(getApplicationContext());
+        saveToPM(context);
     }
 
- */
+
 
     public void pushToBackstackDequeTop(int fragmentID){
         //Get selected item id

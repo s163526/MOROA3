@@ -180,6 +180,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
     }
 
+    @Override
+    public void onDestroy() {
+        //Determine if user killed the app or if it was something else
+        if (isFinishing()){
+            //If it was user - reset the AppState in PM
+            AppState.get().resetPM(this);
+        }
+        super.onDestroy();
+    }
+
 
 
 
