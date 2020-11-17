@@ -32,8 +32,6 @@ public class WhatTabFragment extends Fragment implements AdapterView.OnItemClick
         gridView.setNumColumns(3);
         gridView.setBackgroundColor(getResources().getColor(R.color.moroYellowBackground));
 
-
-        gridView.setMinimumHeight(MainActivity.height * 100);
         gridView.setAdapter(adapter);
 
         return gridView;

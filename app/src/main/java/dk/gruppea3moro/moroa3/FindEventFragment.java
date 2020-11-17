@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import dk.gruppea3moro.moroa3.model.TypeOrMoodFragment;
+
 
 //TODO viewpager
 public class FindEventFragment extends Fragment {
@@ -101,7 +103,7 @@ class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapte
                 fragment = new WhenTabFragment();
                 break;
             case 1:
-                fragment = new WhatTabFragment();
+                fragment = new TypeOrMoodFragment();
                 break;
             case 2:
                 fragment = new WhereTabFragment();
