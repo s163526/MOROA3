@@ -28,6 +28,7 @@ public class AppState extends Application {
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
 
 
+
     //STATIC METHODS--------------------------------------------------------------------------------
     public static AppState get(){
         if (instance==null){

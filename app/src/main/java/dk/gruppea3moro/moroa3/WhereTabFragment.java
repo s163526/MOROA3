@@ -16,7 +16,7 @@ import android.widget.GridView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class WhereTabFragment extends Fragment implements AdapterView.OnItemClickListener  {
+public class WhereTabFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private final String places[] ={"Nørrebro", "Islandsbrygge", "Indre By", "Østerbro", "Nordvest", "Valby", "Brønshøj & Husum", "Amager", "Vesterbro", "Vanløse", "Christianshavn", "Refshaleøen"};
 
@@ -25,7 +25,7 @@ public class WhereTabFragment extends Fragment implements AdapterView.OnItemClic
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.fragment_where_tab, R.id.listeelem_overskrift, places);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.lekt04_listeelement, R.id.listeelem_overskrift, places);
 
         GridView gridView = new GridView(getContext());
         gridView.setOnItemClickListener(this);
