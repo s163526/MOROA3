@@ -3,11 +3,11 @@ package dk.gruppea3moro.moroa3.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class FindEventModel {
+public class SearchCriteria {
     private Date fromDate, toDate;
     private ArrayList<String> areas, types, moods;
 
-    public FindEventModel(){
+    public SearchCriteria(){
         areas = new ArrayList<String>();
         types = new ArrayList<String>();
         moods = new ArrayList<String>();

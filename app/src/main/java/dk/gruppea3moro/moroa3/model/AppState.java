@@ -27,7 +27,7 @@ public class AppState //extends Application
 {
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
-    FindEventModel findEventModel;
+    SearchCriteria searchCriteria;
 
 
 
@@ -134,15 +134,15 @@ public class AppState //extends Application
     }
 
 
-    public FindEventModel getFindEventModel(){
-        if (findEventModel==null){
-            findEventModel=new FindEventModel();
+    public SearchCriteria getSearchCriteria(){
+        if (searchCriteria ==null){
+            searchCriteria =new SearchCriteria();
         }
-        return findEventModel;
+        return searchCriteria;
     }
 
     public void resetFindEventModel(){
-        this.findEventModel=null;
+        this.searchCriteria =null;
     }
 
 }
