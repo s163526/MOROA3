@@ -14,6 +14,7 @@
         android:textColor="#000000"
         android:textSize="21sp"
         android:textStyle="bold"
-        android:background="@drawable/yellowborder"/>
+        android:background="@drawable/blackborder"/>
+
 
 </RelativeLayout>
