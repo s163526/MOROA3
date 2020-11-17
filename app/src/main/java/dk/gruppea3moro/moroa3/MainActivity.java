@@ -169,28 +169,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Load top fragment
         int fragmentId =AppState.get().getIntegerDeque().peek();
         Fragment currentFragment = AppState.getFragmentFromLayoutId(fragmentId);
+        setBottonNavSelection(fragmentId);
         loadFragment(currentFragment);
     }
 
     @Override
     public void onStop() {
+        super.onStop();
+
         //If mainactivity is stopped - the app is no longer in RAM
         //The state is saved to PreferenceManager
         AppState.get().saveToPM(getApplicationContext());
-        super.onStop();
+
+
     }
-
-    @Override
-    public void onDestroy() {
-        //Determine if user killed the app or if it was something else
-        if (isFinishing()){
-            //If it was user - reset the AppState in PM
-            AppState.get().resetPM(this);
-        }
-        super.onDestroy();
-    }
-
-
 
 
 

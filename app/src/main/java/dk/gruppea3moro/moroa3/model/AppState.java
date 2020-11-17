@@ -82,6 +82,11 @@ public class AppState //extends Application
         }
     }
 
+    public static void resetPM() {
+        //clear instance
+        instance = new AppState();
+    }
+
     //NON STATIC METHODS----------------------------------------------------------------------------
 
 
@@ -90,8 +95,10 @@ public class AppState //extends Application
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(get());
+        System.out.println("Forsøger at gemme " + json);
         prefsEditor.putString("AppState", json);
-        prefsEditor.commit();
+        prefsEditor.apply();
+        System.out.println("Har lige gemt "+ json);
     }
 
     public void readFromPM(Context context){
@@ -99,7 +106,7 @@ public class AppState //extends Application
         Gson gson = new Gson();
         String json = mPrefs.getString("AppState", "");
         instance = gson.fromJson(json, AppState.class);
-        System.out.println("");
+        System.out.println("Har lige læst " + json + " fra PM.");
     }
 
 
@@ -108,12 +115,7 @@ public class AppState //extends Application
         return integerDeque;
     }
 
-    public void resetPM(Context context) {
-        //clear instance
-        instance = new AppState();
-        //Save instance
-        saveToPM(context);
-    }
+
 
 
 
