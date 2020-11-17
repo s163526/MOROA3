@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -20,20 +21,22 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class WhereTabFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    private final String places[] ={"Nørrebro", "Islandsbrygge", "Indre By", "Østerbro", "Nordvest", "Valby", "Brønshøj & Husum", "Amager", "Vesterbro", "Vanløse", "Christianshavn", "Refshaleøen"};
+    private final String places[] ={"Nørrebro", "Islands brygge", "Indre By", "Østerbro", "Nordvest", "Valby", "Brønshøj & Husum", "Amager", "Vesterbro", "Vanløse", "Christians- havn", "Refshale- øen"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.lekt04_listeelement, R.id.listeelem_overskrift, places){
+        //TODO Man skal vente efter at have skiftet mellem Hvad og Hvor før man kan klikke
+
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.wheretab_gridview, R.id.listeelem_overskrift, places){
 
         };
 
         GridView gridView = new GridView(getContext());
         gridView.setOnItemClickListener(this);
-        gridView.setNumColumns(2);
+        gridView.setNumColumns(3);
         gridView.setBackgroundColor(getResources().getColor(R.color.moroPinkBackground));
 
 

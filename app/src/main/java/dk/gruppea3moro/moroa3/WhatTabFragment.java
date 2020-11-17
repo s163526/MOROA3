@@ -8,119 +8,47 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class WhatTabFragment extends Fragment implements View.OnClickListener {
+public class WhatTabFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    TextView category1_textView, category2_textView, category3_textView, category4_textView,
-            category5_textView, category6_textView, category7_textView, category8_textView,
-            category9_textView, category10_textView, category11_textView, category12_textView;
+    private final String events[] = {"Koncert", "Udstilling & kunst", "Litteratur", "Film", "Comedy", "Talk", "Teater & forestill- inger", "Fest", "Gratis", "Sport & spil", "Mad & drikke", "Mode"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_what_tab, container, false);
 
-        //TODO erstat med GridView
+        //TODO Man skal vente efter at have skiftet mellem Hvad og Hvor før man kan klikke
 
-        category1_textView = root.findViewById(R.id.category1_textView);
-        category2_textView = root.findViewById(R.id.category2_textView);
-        category3_textView = root.findViewById(R.id.category3_textView);
-        category4_textView = root.findViewById(R.id.category4_textView);
-        category5_textView = root.findViewById(R.id.category5_textView);
-        category6_textView = root.findViewById(R.id.category6_textView);
-        category7_textView = root.findViewById(R.id.category7_textView);
-        category8_textView = root.findViewById(R.id.category8_textView);
-        category9_textView = root.findViewById(R.id.category9_textView);
-        category10_textView = root.findViewById(R.id.category10_textView);
-        category11_textView = root.findViewById(R.id.category11_textView);
-        category12_textView = root.findViewById(R.id.category12_textView);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.lekt04_listeelement, R.id.listeelem_overskrift, events);
 
-        category1_textView.setOnClickListener(this);
-        category2_textView.setOnClickListener(this);
-        category3_textView.setOnClickListener(this);
-        category4_textView.setOnClickListener(this);
-        category5_textView.setOnClickListener(this);
-        category6_textView.setOnClickListener(this);
-        category7_textView.setOnClickListener(this);
-        category8_textView.setOnClickListener(this);
-        category9_textView.setOnClickListener(this);
-        category10_textView.setOnClickListener(this);
-        category11_textView.setOnClickListener(this);
-        category12_textView.setOnClickListener(this);
+        GridView gridView = new GridView(getContext());
+        gridView.setOnItemClickListener(this);
+        gridView.setNumColumns(3);
+        gridView.setBackgroundColor(getResources().getColor(R.color.moroYellowBackground));
 
-        return root;
+
+        gridView.setMinimumHeight(MainActivity.height * 100);
+        gridView.setAdapter(adapter);
+
+        return gridView;
+
     }
-
 
     @Override
-    public void onClick(View view) {
-
-        if (view == category1_textView) {
-            if (category1_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category1_textView);
-            } else changeColorBlack(category1_textView);
-
-        } else if (view == category2_textView) {
-            if (category2_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category2_textView);
-            } else changeColorBlack(category2_textView);
-
-        } else if (view == category3_textView) {
-            if (category3_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category3_textView);
-            } else changeColorBlack(category3_textView);
-
-        } else if (view == category4_textView) {
-            if (category4_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category4_textView);
-            } else changeColorBlack(category4_textView);
-
-        }else if (view == category5_textView) {
-            if (category5_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category5_textView);
-            } else changeColorBlack(category5_textView);
-
-        }else if (view == category6_textView) {
-            if (category6_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category6_textView);
-            } else changeColorBlack(category6_textView);
-
-        } else if (view == category7_textView) {
-            if (category7_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category7_textView);
-            } else changeColorBlack(category7_textView);
-
-        } else if (view == category8_textView) {
-            if (category8_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category8_textView);
-            } else changeColorBlack(category8_textView);
-
-        } else if (view == category9_textView) {
-            if (category9_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category9_textView);
-            } else changeColorBlack(category9_textView);
-
-        } else if (view == category10_textView) {
-            if (category10_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category10_textView);
-            } else changeColorBlack(category10_textView);
-
-        } else if (view == category11_textView) {
-            if (category11_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category11_textView);
-            } else changeColorBlack(category11_textView);
-
-        } else if (view == category12_textView) {
-            if (category12_textView.getCurrentTextColor() != Color.GREEN) {
-                changeColorGreen(category12_textView);
-            } else changeColorBlack(category12_textView);
-        }
-
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getContext(), "Klik på " + position, Toast.LENGTH_SHORT).show();
     }
 
-    private void changeColorGreen(TextView textView) {
+
+
+
+   /* private void changeColorGreen(TextView textView) {
         textView.setTextColor(Color.GREEN);
         textView.setBackgroundResource(R.drawable.greenborder);
 
@@ -130,5 +58,5 @@ public class WhatTabFragment extends Fragment implements View.OnClickListener {
         textView.setTextColor(Color.BLACK);
         textView.setBackgroundResource(R.drawable.blackborder);
 
-    }
+    }*/
 }
