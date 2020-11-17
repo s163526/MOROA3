@@ -25,6 +25,7 @@ public class WhereTabFragment extends Fragment implements AdapterView.OnItemClic
         gridView.setOnItemClickListener(this);
         gridView.setNumColumns(GridView.AUTO_FIT);
 
+        //wow
         //gridView.setAdapter(adapter);
 
         //setContentView(gridView);
