@@ -23,7 +23,8 @@ import dk.gruppea3moro.moroa3.TipUsFragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class AppState extends Application {
+public class AppState //extends Application
+{
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
 
@@ -107,7 +108,7 @@ public class AppState extends Application {
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
     }
-
+/*
     public void onCreate() {
         super.onCreate();
         //clear instance
@@ -115,6 +116,8 @@ public class AppState extends Application {
         //Save instance
         saveToPM(getApplicationContext());
     }
+
+ */
 
     public void pushToBackstackDequeTop(int fragmentID){
         //Get selected item id
