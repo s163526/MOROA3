@@ -60,9 +60,10 @@ public class TipUsFragment extends Fragment implements View.OnClickListener {
 
         return root;
     }
+
     @Override
-    public void onClick(View v){
-        if(v==chooseDate) {
+    public void onClick(View v) {
+        if (v == chooseDate) {
             MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
             MaterialDatePicker<Long> picker = builder.build();
             picker.show(getFragmentManager(), picker.toString());

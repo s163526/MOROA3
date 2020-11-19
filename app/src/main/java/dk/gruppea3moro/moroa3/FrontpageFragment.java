@@ -15,7 +15,6 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
 
     Button rightNowButton, findEventButton;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

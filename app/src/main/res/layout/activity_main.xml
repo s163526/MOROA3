@@ -8,8 +8,6 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-
-
         <FrameLayout
             android:id="@+id/topBarFL"
             android:layout_width="match_parent"

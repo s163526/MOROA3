@@ -35,7 +35,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        MainActivity ma = ((MainActivity)getActivity());
+        MainActivity ma = ((MainActivity) getActivity());
         if (v == contact_TextView) {
             AppState.get().pushToBackstackDequeTop(R.id.fragment_contact_us);
             ContactUsFragment contactUsFragment = new ContactUsFragment();
@@ -50,11 +50,11 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             replaceFragment(tipUsFragment);
         }
     }
+
     public void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFL, fragment ); // give your fragment container id in first parameter
+        transaction.replace(R.id.mainFL, fragment); // give your fragment container id in first parameter
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
-
 }
