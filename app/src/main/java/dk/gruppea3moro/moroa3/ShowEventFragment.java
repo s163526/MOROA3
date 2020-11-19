@@ -36,7 +36,7 @@ public class ShowEventFragment extends Fragment {
 
     RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
         @Override
-        public int getItemCount()  {
+        public int getItemCount() {
             return events.size();
         }
 
@@ -44,12 +44,13 @@ public class ShowEventFragment extends Fragment {
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             System.out.println("onCreateViewHolder ");
             View itemView = getLayoutInflater().inflate(R.layout.showevent_recyclerview, parent, false);
-            return new RecyclerView.ViewHolder(itemView) {};
+            return new RecyclerView.ViewHolder(itemView) {
+            };
         }
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder vh, int position) {
-            System.out.println("onBindViewHolder "+position);
+            System.out.println("onBindViewHolder " + position);
             TextView titel = vh.itemView.findViewById(R.id.titel_textView);
             TextView afstand = vh.itemView.findViewById(R.id.afstand_textView);
             TextView dato = vh.itemView.findViewById(R.id.dato_textView);
@@ -61,9 +62,6 @@ public class ShowEventFragment extends Fragment {
             dato.setText("12/12 - 2021"); //TODO skal ikke hardcodes
             tidspunkt.setText("15:00 - 20:00"); //TODO skal ikke hardcodes
             billede.setImageResource(R.drawable.event);
-
-
         }
     };
-
 }

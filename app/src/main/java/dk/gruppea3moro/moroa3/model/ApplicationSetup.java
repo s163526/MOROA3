@@ -9,7 +9,5 @@ public class ApplicationSetup extends Application {
         super.onCreate();
         AppState.resetPM();
         AppState.get().saveToPM(getApplicationContext());
-
-
     }
 }

@@ -30,18 +30,17 @@ public class AppState //extends Application
     SearchCriteria searchCriteria;
 
 
-
     //STATIC METHODS--------------------------------------------------------------------------------
-    public static AppState get(){
-        if (instance==null){
-            instance=new AppState();
+    public static AppState get() {
+        if (instance == null) {
+            instance = new AppState();
         }
         return instance;
     }
 
     //Returns layout id of the fragment corresponding to the item selected in bottom navigation bar
     public static int getFragmentLayoutId(int bnItemId) {
-        switch (bnItemId){
+        switch (bnItemId) {
             case R.id.bn_home:
                 return R.id.fragment_frontpage;
             case R.id.bn_right_now:
@@ -92,19 +91,19 @@ public class AppState //extends Application
     //NON STATIC METHODS----------------------------------------------------------------------------
 
 
-    public void saveToPM(Context context){
-        SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
+    public void saveToPM(Context context) {
+        SharedPreferences mPrefs = context.getSharedPreferences("AppState", MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(get());
         System.out.println("Forsøger at gemme " + json);
         prefsEditor.putString("AppState", json);
         prefsEditor.apply();
-        System.out.println("Har lige gemt "+ json);
+        System.out.println("Har lige gemt " + json);
     }
 
-    public void readFromPM(Context context){
-        SharedPreferences mPrefs = context.getSharedPreferences("AppState",MODE_PRIVATE);
+    public void readFromPM(Context context) {
+        SharedPreferences mPrefs = context.getSharedPreferences("AppState", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("AppState", "");
         instance = gson.fromJson(json, AppState.class);
@@ -112,18 +111,14 @@ public class AppState //extends Application
     }
 
 
-
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
     }
 
 
-
-
-
-    public void pushToBackstackDequeTop(int fragmentID){
+    public void pushToBackstackDequeTop(int fragmentID) {
         //Get selected item id
-        if (integerDeque.contains(fragmentID)){
+        if (integerDeque.contains(fragmentID)) {
             //If deque already contains the item - remove
             integerDeque.remove(fragmentID);
         }
@@ -134,15 +129,15 @@ public class AppState //extends Application
     }
 
 
-    public SearchCriteria getSearchCriteria(){
-        if (searchCriteria ==null){
-            searchCriteria =new SearchCriteria();
+    public SearchCriteria getSearchCriteria() {
+        if (searchCriteria == null) {
+            searchCriteria = new SearchCriteria();
         }
         return searchCriteria;
     }
 
-    public void resetFindEventModel(){
-        this.searchCriteria =null;
+    public void resetFindEventModel() {
+        this.searchCriteria = null;
     }
 
 }

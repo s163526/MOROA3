@@ -88,7 +88,7 @@ public class FindEventFragment extends Fragment {
 }
 
 class TabFragmentAdapter extends androidx.viewpager2.adapter.FragmentStateAdapter {
-    public  TabFragmentAdapter(Fragment fragment) {
+    public TabFragmentAdapter(Fragment fragment) {
         super(fragment);
     }
 

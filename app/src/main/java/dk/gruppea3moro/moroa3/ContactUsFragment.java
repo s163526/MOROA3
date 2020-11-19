@@ -42,6 +42,4 @@ public class ContactUsFragment extends Fragment implements View.OnClickListener 
         transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
         transaction.commit();
     }
-
-
 }

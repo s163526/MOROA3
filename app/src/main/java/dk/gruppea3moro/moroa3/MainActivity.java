@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .add(R.id.topBarFL, topBarFragment)  // tom container i layout
                 .commit();
 
-
         //Main FL
         mainFragment = new FrontpageFragment();
         getSupportFragmentManager().beginTransaction()
@@ -98,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Use to change between fragments and set the bottom navigation bar at the same time.
     //Only usable for fragments, that are present on bottom navigation bar
     public void setBottonNavSelection(int fragmentId) {
-        switch (fragmentId){
+        switch (fragmentId) {
             case R.id.fragment_frontpage:
                 //Set checked frontpage
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
@@ -108,9 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
                 break;
             case R.id.fragment_find_event:
-            //case R.id.fragment_category_tab:
-            //case R.id.fragment_when_tab:
-            //case R.id.fragment_where_tab:
+                //case R.id.fragment_category_tab:
+                //case R.id.fragment_when_tab:
+                //case R.id.fragment_where_tab:
                 //Set checked find event
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
                 break;
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fragment_about_us:
             case R.id.fragment_contact_us:
             case R.id.fragment_tip_us:
-               //Set checked menu
+                //Set checked menu
                 bottomNavigationView.getMenu().getItem(4).setChecked(true);
                 break;
             default:
@@ -133,18 +132,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.mainFL,fragment)
+                .replace(R.id.mainFL, fragment)
                 .commit();
     }
 
-    public void onBackPressed(){
+    public void onBackPressed() {
         //Get integerDeqye from AppState
         Deque<Integer> integerDeque = AppState.get().getIntegerDeque();
 
         //Pop to previous fragment
         integerDeque.pop();
 
-        if(!integerDeque.isEmpty()){
+        if (!integerDeque.isEmpty()) {
             //When deque is not empty
             //load fragment
             int id = integerDeque.peek();
@@ -157,9 +156,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-
-
     @Override
     public void onClick(View v) {
 
@@ -169,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         //Read AppState from PreferenceManager - it may be empty or it may be saved from when app was in use
         AppState.get().readFromPM(getApplicationContext());
-        if (AppState.get().getIntegerDeque().size()==0){
+        if (AppState.get().getIntegerDeque().size() == 0) {
             //Add home fragment in deque list
             AppState.get().getIntegerDeque().push(R.id.fragment_frontpage);
         }
@@ -178,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
 
         //Load top fragment
-        int fragmentId =AppState.get().getIntegerDeque().peek();
+        int fragmentId = AppState.get().getIntegerDeque().peek();
         Fragment currentFragment = AppState.getFragmentFromLayoutId(fragmentId);
         setBottonNavSelection(fragmentId);
         loadFragment(currentFragment);
@@ -191,10 +187,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //If mainactivity is stopped - the app is no longer in RAM
         //The state is saved to PreferenceManager
         AppState.get().saveToPM(getApplicationContext());
-
-
     }
-
-
-
 }
