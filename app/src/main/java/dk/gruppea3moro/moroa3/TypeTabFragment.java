@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class TypeTabFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private final String events[] = {"Koncert", "Udstilling & kunst", "Litteratur", "Film", "Comedy", "Talk", "Teater & forestill- inger", "Fest", "Gratis", "Sport & spil", "Mad & drikke", "Mode"};
-
+    int height = MainActivity.height;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,7 +32,21 @@ public class TypeTabFragment extends Fragment implements AdapterView.OnItemClick
         gridView.setNumColumns(3);
         gridView.setBackgroundColor(getResources().getColor(R.color.moroYellowBackground));
 
-        
+
+
+
+        /*ViewGroup.LayoutParams params = gridView.getLayoutParams();
+        if (params != null) {
+            params.width= ViewGroup.LayoutParams.MATCH_PARENT;
+            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        } else
+            params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        params.height = 50;
+
+        gridView.setLayoutParams(params);*/
+
+//        gridView.setLayoutParams(params);
         gridView.setAdapter(adapter);
 
         return gridView;
