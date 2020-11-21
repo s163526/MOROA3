@@ -64,4 +64,16 @@ public class AddressDTO {
     public void setAddressName(String addressName) {
         this.addressName = addressName;
     }
+
+    @Override
+    public String toString() {//TODO make real address string
+        return "AddressDTO{" +
+                "area='" + area + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", streetNumber=" + streetNumber +
+                ", zipCode=" + zipCode +
+                ", additionalText='" + additionalText + '\'' +
+                ", addressName='" + addressName + '\'' +
+                '}';
+    }
 }

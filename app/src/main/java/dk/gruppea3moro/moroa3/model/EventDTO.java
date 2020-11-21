@@ -1,9 +1,10 @@
 package dk.gruppea3moro.moroa3.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class EventDTO {
+public class EventDTO implements Serializable {
     String title, subtext, eventLink, imageLink;
     Date startDate, endDate;
     double price;
@@ -122,4 +123,6 @@ public class EventDTO {
                 ", moods=" + moods +
                 '}';
     }
+
+
 }
