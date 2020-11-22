@@ -77,17 +77,18 @@ public class SheetReader implements EventLoader{
 
 
     @Override
-    public ArrayList<EventDTO> searchEvent(SearchCriteria sc) {
-        return null;
+    public ArrayList<EventDTO> searchEvent(SearchCriteria sc) throws IOException {
+        //TODO find en måde at udfylde metoden på
+        return getAllEvents();
     }
 
     @Override
-    public ArrayList<EventDTO> getNextNEvents(int offset, int numberOfEvents, SearchCriteria sc) {
-        return null;
+    public ArrayList<EventDTO> getNextNEvents(int offset, int numberOfEvents, SearchCriteria sc) throws IOException {
+        return getAllEvents();
     }
 
     @Override
-    public EventDTO getFeaturedEvent() {
-        return null;
+    public EventDTO getFeaturedEvent() throws IOException {
+        return getAllEvents().get(0);
     }
 }
