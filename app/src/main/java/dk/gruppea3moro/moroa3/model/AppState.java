@@ -64,6 +64,8 @@ public class AppState //extends Application
             case R.id.fragment_right_now:
                 return new ShowResultFragment();
             case R.id.fragment_show_result:
+                return new ShowResultFragment();
+            case R.id.fragment_show_event:
                 return new ShowEventFragment();
             case R.id.fragment_find_event:
                 return new FindEventFragment();
