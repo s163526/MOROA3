@@ -10,7 +10,7 @@ public interface EventLoader {
 
 
     ArrayList<EventDTO> getAllEvents() throws IOException;
-    ArrayList<EventDTO> searchEvent(SearchCriteria sc) throws IOException;
+    ArrayList<EventDTO> searchEvents(SearchCriteria sc) throws IOException;
     ArrayList<EventDTO> getNextNEvents(int offset, int numberOfEvents, SearchCriteria sc) throws IOException;
     EventDTO getFeaturedEvent() throws IOException;
 }

@@ -60,12 +60,12 @@ public class SheetReader implements EventLoader{
 
     public Date parseDate(String textDate){
         //TODO udfyld metoden
-        return null;
+        return new Date(System.currentTimeMillis());
     }
 
     public AddressDTO parseAddress(String textAddress){
         //TODO udfyld metoden
-        return null;
+        return new AddressDTO("København V","Vesterbrogade",54,1703);
     }
 
     public ArrayList<String> parseTags(String textTags){
@@ -77,7 +77,7 @@ public class SheetReader implements EventLoader{
 
 
     @Override
-    public ArrayList<EventDTO> searchEvent(SearchCriteria sc) throws IOException {
+    public ArrayList<EventDTO> searchEvents(SearchCriteria sc) throws IOException {
         //TODO find en måde at udfylde metoden på
         return getAllEvents();
     }
