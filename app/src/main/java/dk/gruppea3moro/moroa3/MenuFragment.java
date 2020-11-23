@@ -39,22 +39,16 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         if (v == contact_TextView) {
             AppState.get().pushToBackstackDequeTop(R.id.fragment_contact_us);
             ContactUsFragment contactUsFragment = new ContactUsFragment();
-            replaceFragment(contactUsFragment);
+            ma.loadFragment(contactUsFragment);
         } else if (v == about_TextView) {
             AppState.get().pushToBackstackDequeTop(R.id.fragment_about_us);
             AboutUsFragment aboutUsFragment = new AboutUsFragment();
-            replaceFragment(aboutUsFragment);
+            ma.loadFragment(aboutUsFragment);
         } else if (v == tip_Textview) {
             AppState.get().pushToBackstackDequeTop(R.id.fragment_tip_us);
             TipUsFragment tipUsFragment = new TipUsFragment();
-            replaceFragment(tipUsFragment);
+            ma.loadFragment(tipUsFragment);
         }
     }
 
-    public void replaceFragment(Fragment fragment) {
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.mainFL, fragment); // give your fragment container id in first parameter
-        transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
-        transaction.commit();
-    }
 }

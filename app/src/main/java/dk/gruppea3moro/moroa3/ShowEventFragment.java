@@ -20,7 +20,7 @@ public class ShowEventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_show_result, container, false);
+        View root = inflater.inflate(R.layout.fragment_show_event, container, false);
         title = root.findViewById(R.id.titleTVShowEvent);
         subtext = root.findViewById(R.id.descriptionTVShowEvent);
         price = root.findViewById(R.id.priceTVShowEvent);
