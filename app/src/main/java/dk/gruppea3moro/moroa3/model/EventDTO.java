@@ -1,7 +1,9 @@
 package dk.gruppea3moro.moroa3.model;
 
 import java.io.Serializable;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class EventDTO implements Serializable {
@@ -122,6 +124,19 @@ public class EventDTO implements Serializable {
                 ", types=" + types +
                 ", moods=" + moods +
                 '}';
+    }
+
+    public String getStartDay(){
+        Date d = getStartDate();
+        String res = d.getDay() +"/" +d.getMonth() +"/" +d.getYear();
+        return res; //TODO
+    }
+
+    public String getStartTime(){
+        Date d = getStartDate();
+        long seconds = d.getTime();
+        Time t = new Time(seconds);
+        return t.toString();
     }
 
 
