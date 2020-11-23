@@ -7,10 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.Toast;
 
 public class MoodFragment extends Fragment {
     private final String events[] = {"Du vil ikke hjem, men videre", "Du vil ud i det blå", "Du har tømmermænd", "Du vil udvide din horisont", "Du har tomme lommer", "Mad gør dig glad", "Du vil forkæle dig selv", "Du vil imponere din date", "De gamle kommer på besøg", "Du vil have gang i kroppen", "Temp", "Temp"};
@@ -22,7 +20,7 @@ public class MoodFragment extends Fragment {
 
         //TODO Man skal vente efter at have skiftet mellem Hvad og Hvor før man kan klikke
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.lekt04_listeelement, R.id.listeelem_overskrift, events);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.whattab_gridview, R.id.listeelem_overskrift, events);
 
         GridView gridView = new GridView(getContext());
         gridView.setNumColumns(3);
