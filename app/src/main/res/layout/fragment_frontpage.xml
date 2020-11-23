@@ -22,7 +22,7 @@
             android:id="@+id/featuredEventFrontpageFL"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="15"
 
             />
 
@@ -30,12 +30,14 @@
             android:id="@+id/rightNowButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/lige_nu" />
 
         <Button
             android:id="@+id/findEventButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/find_event" />
     </LinearLayout>
 

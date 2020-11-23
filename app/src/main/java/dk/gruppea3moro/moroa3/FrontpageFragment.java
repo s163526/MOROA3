@@ -3,13 +3,20 @@ package dk.gruppea3moro.moroa3;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+import dk.gruppea3moro.moroa3.data.DataController;
 import dk.gruppea3moro.moroa3.model.AppState;
+import dk.gruppea3moro.moroa3.model.EventDTO;
 
 public class FrontpageFragment extends Fragment implements View.OnClickListener {
 
@@ -22,7 +29,8 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_frontpage, container, false);
 
-
+        //Call method to get featured event from bg-thread and more
+        setupFeaturedEvent();
 
         //Buttons
         rightNowButton = root.findViewById(R.id.rightNowButtonFP);
@@ -55,5 +63,40 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
             Fragment f =AppState.get().getFragmentFromLayoutId(R.id.fragment_right_now);
             ((MainActivity)getActivity()).loadFragment(f);
         }
+    }
+
+    public void setupFeaturedEvent(){
+        //Create object for bg and fg threads
+        Executor bgThread = Executors.newSingleThreadExecutor();
+        Handler uiThread = new Handler();
+
+        //Execute bg thread
+        bgThread.execute(() ->{
+            //Get featured event with DataController from BackgroundThread
+            EventDTO featuredEventDTO= DataController.get().getFeaturedEvent();
+
+            //Get ready for fragment transaction for featured event
+            Bundle b = new Bundle();
+            b.putSerializable("event",featuredEventDTO);
+            Fragment featuredEventFragment = new ShowEventFragment(); //TODO burde nok være en anden type .feks. smallShowEventFragment
+            featuredEventFragment.setArguments(b);
+
+            //Post the fragment transaction on UI-thread
+            uiThread.post(()->{
+                if (getActivity()!= null){
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.featuredEventFrontpageFL, featuredEventFragment)
+                            .commit();
+                }
+
+            });
+        });
+
+
+
+
+
+
     }
 }
