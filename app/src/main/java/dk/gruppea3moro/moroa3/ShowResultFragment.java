@@ -112,7 +112,9 @@ public class ShowResultFragment extends Fragment {
             timeTV.setText(currentEvent.getStartTime());
 
             //Let Picasso handle the image
-            Picasso.get().load(currentEvent.getImageLink()).into(imageView);
+            Picasso.get().load(currentEvent.getImageLink())
+                    .placeholder(R.drawable.default_event)
+                    .into(imageView);
             }
     };
 

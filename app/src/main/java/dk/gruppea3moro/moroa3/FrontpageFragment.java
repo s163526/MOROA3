@@ -15,11 +15,14 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
 
     Button rightNowButton, findEventButton;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_frontpage, container, false);
+
+
 
         //Buttons
         rightNowButton = root.findViewById(R.id.rightNowButtonFP);
