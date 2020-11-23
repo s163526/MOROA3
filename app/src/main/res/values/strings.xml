@@ -37,6 +37,8 @@
     <string name="litteratur">Litteratur</string>
     <string name="Stemning">Stemning</string>
     <string name="TYPE">Type</string>
+    <string name="loading">Loader...</string>
+
     <!--
     TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
     <string-array name="month">
