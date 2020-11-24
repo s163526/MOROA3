@@ -14,24 +14,21 @@ import com.squareup.picasso.Picasso;
 
 import dk.gruppea3moro.moroa3.model.EventDTO;
 
-public class ShowEventFragment extends Fragment {
-    TextView title, subtext, price, startDay, startTime, address;
+public class FeaturedEventFragment extends Fragment {
+    TextView title, startTime, address;
     ImageView image;
-    //TODO add link, image and more?
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_show_event, container, false);
-        title = root.findViewById(R.id.titleTVShowEvent);
-        subtext = root.findViewById(R.id.descriptionTVShowEvent);
-        price = root.findViewById(R.id.priceTVShowEvent);
-        startDay = root.findViewById(R.id.dateTVShowEvent);
-        startTime = root.findViewById(R.id.timeTVShowEvent);
-        address = root.findViewById(R.id.addressTVShowEvent);
-        image = root.findViewById(R.id.evnentImageShowEvent);
+        View root = inflater.inflate(R.layout.fragment_featured_event, container, false);
+        title = root.findViewById(R.id.featuredEventTitleTV);
+
+        startTime = root.findViewById(R.id.featuredEventTimeTV);
+        address = root.findViewById(R.id.featuredEventAddressTV);
+        image = root.findViewById(R.id.featuredEventImageView);
 
 
         setupEventView();
@@ -44,10 +41,7 @@ public class ShowEventFragment extends Fragment {
 
         //Set text views
         title.setText(eventDTO.getTitle());
-        subtext.setText(eventDTO.getSubtext());
-        price.setText("Pris: "+eventDTO.getPrice());
-        startDay.setText("Dato: "+eventDTO.getStartDay());
-        startTime.setText("Starter klokken " + eventDTO.getStartTime());
+        startTime.setText(eventDTO.getStartTime());
         address.setText(eventDTO.getAddressDTO().toString());
 
         //Let Picasso handle the image

@@ -11,6 +11,8 @@ public class AddressDTO {
     String addressName;
 
     public AddressDTO(String area, String streetName, int streetNumber, int zipCode) {
+        if (additionalText==null){additionalText="";}
+        if (area==null){area="";}
         this.area = area;
         this.streetName = streetName;
         this.streetNumber = streetNumber;
@@ -66,14 +68,17 @@ public class AddressDTO {
     }
 
     @Override
-    public String toString() {//TODO make real address string
-        return "AddressDTO{" +
-                "area='" + area + '\'' +
-                ", streetName='" + streetName + '\'' +
-                ", streetNumber=" + streetNumber +
-                ", zipCode=" + zipCode +
-                ", additionalText='" + additionalText + '\'' +
-                ", addressName='" + addressName + '\'' +
-                '}';
+    public String toString() {
+        String result ="";
+        if (addressName!= null){
+            result+=addressName+ "\n ";
+        }
+        result += streetName +" " + streetNumber;
+        if (additionalText!= null){
+            result+=" " +additionalText;
+        }
+        result += "\n " + zipCode + " " + area;
+        return result;
+
     }
 }
