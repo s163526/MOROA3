@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/koncert" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+
+            android:text="@string/udstilling_og_kunst" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/litteratur" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/film" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/comedy" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/talk" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/teater" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/fest" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/gratis" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/sport_og_spil" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/mad_og_drikke" />
+
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellowborder"
+            android:gravity="center"
+            android:text="@string/mode" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
