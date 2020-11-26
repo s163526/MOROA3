@@ -27,16 +27,19 @@
     <string name="sport_og_spil">Sport og spil</string>
     <string name="mode">Mode</string>
     <string name="fest">Fest</string>
-    <string name="teater"><![CDATA[Teater & forestillinger]]></string>
+    <string name="teater"><![CDATA[Teater & \n forestill- \n inger]]></string>
     <string name="gratis">Gratis</string>
     <string name="comedy">Comedy</string>
     <string name="talk">Talk</string>
     <string name="film">Film</string>
     <string name="koncert">Koncert</string>
-    <string name="udstilling_og_kunst">Udstilling og kunst</string>
+    <string name="udstilling_og_kunst"><![CDATA[Udstilling \n
+    og kunst]]></string>
     <string name="litteratur">Litteratur</string>
     <string name="Stemning">Stemning</string>
     <string name="TYPE">Type</string>
+    <string name="loading">Loader...</string>
+
     <!--
     TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
     <string-array name="month">

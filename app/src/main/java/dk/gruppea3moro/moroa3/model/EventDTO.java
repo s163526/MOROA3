@@ -136,7 +136,9 @@ public class EventDTO implements Serializable {
         Date d = getStartDate();
         long seconds = d.getTime();
         Time t = new Time(seconds);
-        return t.toString();
+        String timeString = t.toString();
+        return timeString.substring(0,5);
+
     }
 
 

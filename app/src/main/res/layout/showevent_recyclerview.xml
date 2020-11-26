@@ -23,7 +23,7 @@
         android:layout_height="32dp"
         android:layout_below="@+id/showevent_imageView_RV"
         android:layout_marginTop="3dp"
-        android:background="#4CAF50"
+        android:background="@color/moroDarkGreenBackground"
         android:gravity="center"
         />
 
@@ -34,6 +34,7 @@
         android:layout_below="@+id/showevent_imageView_RV"
         android:layout_marginTop="2dp"
         android:gravity="center"
+        android:textColor="@color/colorWhiteText"
         tools:text="København V"
         />
 
@@ -48,6 +49,7 @@
         android:layout_toStartOf="@+id/time_textView_RV"
         android:layout_toEndOf="@+id/area_textView_RV"
         android:gravity="center"
+        android:textColor="@color/colorWhiteText"
         tools:text="3/1/2020"
         />
 
@@ -60,6 +62,7 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="9dp"
         android:gravity="center"
+        android:textColor="@color/colorWhiteText"
         tools:text="10:00"
         />
 

@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.Executor;
@@ -65,7 +67,7 @@ public class ShowResultFragment extends Fragment {
         });
 
         //TODO lav LOADING-animation med MaterialIO eller lign.
-        Toast.makeText(getContext(), "Loader...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.loading), Toast.LENGTH_SHORT).show();
 
         //return recyclerview
         return recyclerView;
@@ -109,18 +111,11 @@ public class ShowResultFragment extends Fragment {
             dateTV.setText(currentEvent.getStartDay());
             timeTV.setText(currentEvent.getStartTime());
 
-            Executor bgThread = Executors.newSingleThreadExecutor();
-            Handler uiThread = new Handler();
-            bgThread.execute(() ->{
-                //Get image via link in background
-                //TODO tag højde for, at hvis billedet ikke hentes, bør man prøve igen.
-                Drawable image = DataController.loadImageFromURL(currentEvent);
-                uiThread.post(()->{
-                    imageView.setImageDrawable(image);
-                });
-            });
-            imageView.setImageResource(R.drawable.default_event); //TODO her bør være en default MORO-billede
-        }
+            //Let Picasso handle the image
+            Picasso.get().load(currentEvent.getImageLink())
+                    .placeholder(R.drawable.default_event)
+                    .into(imageView);
+            }
     };
 
     class RVOnClickListener implements View.OnClickListener {
@@ -137,10 +132,13 @@ public class ShowResultFragment extends Fragment {
             Bundle b = new Bundle();
             b.putSerializable("event",event);
             f.setArguments(b);
+            AppState.get().pushToBackstackDequeTop(R.id.fragment_show_event);
             ((MainActivity) getActivity()).loadFragment(f);
 
         }
     }
+
+    
 
 
 
