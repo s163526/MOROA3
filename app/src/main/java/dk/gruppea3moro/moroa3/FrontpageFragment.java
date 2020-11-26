@@ -127,6 +127,7 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         //Get ready for fragment transaction for featured event
         Bundle b = new Bundle();
         b.putSerializable("event",featuredEvent);
+        AppState.get().setLastViewedEvent(featuredEvent);
         Fragment featuredEventFragment = new ShowEventFragment();
         featuredEventFragment.setArguments(b);
 

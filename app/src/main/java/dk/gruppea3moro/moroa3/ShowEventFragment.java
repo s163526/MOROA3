@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import dk.gruppea3moro.moroa3.model.AppState;
 import dk.gruppea3moro.moroa3.model.EventDTO;
 
 public class ShowEventFragment extends Fragment {
@@ -41,7 +42,13 @@ public class ShowEventFragment extends Fragment {
 
     public void setupEventView() {
         Bundle arguments = getArguments();
-        EventDTO eventDTO = (EventDTO) arguments.getSerializable("event");
+        EventDTO eventDTO;
+        try { //TODO evt. gør dette mere elegant - det er lidt en cowboy-løsning men det virker
+            eventDTO = (EventDTO) arguments.getSerializable("event");
+        } catch (Exception e){
+            eventDTO = AppState.get().getLastViewedEvent();
+        }
+
 
         //Set text views
         title.setText(eventDTO.getTitle());

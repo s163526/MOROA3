@@ -2,6 +2,7 @@ package dk.gruppea3moro.moroa3.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
@@ -28,6 +29,7 @@ public class AppState //extends Application
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
     SearchCriteria searchCriteria;
+    private EventDTO lastViewedEvent;
     private EventDTO featuredEvent;
 
 
@@ -69,7 +71,11 @@ public class AppState //extends Application
             case R.id.fragment_show_event:
                 return new ShowEventFragment();
             case R.id.fragment_find_event:
-                return new FindEventFragment();
+                Bundle b = new Bundle();
+                b.putSerializable("event",AppState.get().getLastViewedEvent());
+                Fragment f = new FindEventFragment();
+                f.setArguments(b);
+                return f;
             case R.id.fragment_my_profile:
                 return new MyProfileFragment();
             case R.id.fragment_menu:
@@ -149,5 +155,13 @@ public class AppState //extends Application
 
     public void setFeaturedEvent(EventDTO featuredEvent) {
         this.featuredEvent = featuredEvent;
+    }
+
+    public EventDTO getLastViewedEvent() {
+        return lastViewedEvent;
+    }
+
+    public void setLastViewedEvent(EventDTO lastViewedEvent) {
+        this.lastViewedEvent = lastViewedEvent;
     }
 }
