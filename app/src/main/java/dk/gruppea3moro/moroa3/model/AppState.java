@@ -28,6 +28,7 @@ public class AppState //extends Application
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
     SearchCriteria searchCriteria;
+    private EventDTO featuredEvent;
 
 
     //STATIC METHODS--------------------------------------------------------------------------------
@@ -142,4 +143,11 @@ public class AppState //extends Application
         this.searchCriteria = null;
     }
 
+    public EventDTO getFeaturedEvent() {
+        return featuredEvent;
+    }
+
+    public void setFeaturedEvent(EventDTO featuredEvent) {
+        this.featuredEvent = featuredEvent;
+    }
 }

@@ -15,7 +15,7 @@ import dk.gruppea3moro.moroa3.model.AddressDTO;
 import dk.gruppea3moro.moroa3.model.EventDTO;
 import dk.gruppea3moro.moroa3.model.SearchCriteria;
 
-public class SheetReader implements EventLoader{
+public class SheetReader implements EventLoader {
 
     final String SHEET_ID = "1mZFpWlSVm7v-_lLbbCaWo_OgdN-lP3XmvMTTu1wbqFY";
 
@@ -42,7 +42,7 @@ public class SheetReader implements EventLoader{
         return events;
     }
 
-    public EventDTO createEventDTO(String line){
+    public EventDTO createEventDTO(String line) {
         EventDTO event = new EventDTO();
         String[] fields = line.split("\t");
         event.setTitle(fields[0]);
@@ -50,28 +50,20 @@ public class SheetReader implements EventLoader{
         event.setPrice(Integer.parseInt(fields[2]));
         event.setEventLink(fields[3]);
         event.setImageLink(fields[4]);
-        event.setStartDate(parseDate(fields[5]));
-        event.setEndDate(parseDate(fields[6]));
-        event.setAddressDTO(parseAddress(fields[7]));
-        event.setMoods(parseTags(fields[8]));
-        event.setTypes(parseTags(fields[9]));
+        event.setStartTime(fields[5]);
+        event.setStartDate(fields[6]);
+        event.setEndTime(fields[7]);
+        event.setEndDate(fields[8]);
+        event.setAddressDTO(new AddressDTO(fields[9], fields[10], fields[11], fields[12], fields[13], fields[14])); //TODO kan give problemer hvis nr. er eks 23A
+        event.setMoods(parseTags(fields[15]));
+        event.setTypes(parseTags(fields[16]));
         return event;
     }
 
-    public Date parseDate(String textDate){
-        //TODO udfyld metoden
-        return new Date(System.currentTimeMillis());
-    }
-
-    public AddressDTO parseAddress(String textAddress){
-        //TODO udfyld metoden
-        return new AddressDTO("København V","Vesterbrogade",54,1703);
-    }
-
-    public ArrayList<String> parseTags(String textTags){
+    public ArrayList<String> parseTags(String textTags) {
         ArrayList<String> tags = new ArrayList<>();
         String[] tagArray = textTags.split(";");
-        Collections.addAll(tags,tagArray);
+        Collections.addAll(tags, tagArray);
         return tags;
     }
 

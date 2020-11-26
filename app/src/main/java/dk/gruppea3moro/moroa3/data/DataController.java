@@ -59,6 +59,15 @@ public class DataController {
         return null;
     }
 
+    public EventDTO getFeaturedEvent()  {
+        try {
+            return getEventLoader().getFeaturedEvent();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static Drawable loadImageFromURL(EventDTO eventDTO) {
         try {
             InputStream is = (InputStream) new URL(eventDTO.getImageLink()).getContent();
