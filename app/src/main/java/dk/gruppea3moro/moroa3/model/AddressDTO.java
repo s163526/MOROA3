@@ -1,6 +1,8 @@
 package dk.gruppea3moro.moroa3.model;
 
-public class AddressDTO {
+import java.io.Serializable;
+
+public class AddressDTO implements Serializable {
     String area;
     String streetName;
     String streetNumber;
