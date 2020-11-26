@@ -17,22 +17,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/instagram_imageView"
+
+        <FrameLayout
+            android:id="@+id/featuredEventFrontpageFL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:src="@tools:sample/avatars" />
+            android:layout_height="0dp"
+            android:layout_weight="15"
+
+            />
 
         <Button
             android:id="@+id/rightNowButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/lige_nu" />
 
         <Button
             android:id="@+id/findEventButtonFP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/find_event" />
     </LinearLayout>
 

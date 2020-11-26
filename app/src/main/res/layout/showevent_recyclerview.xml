@@ -9,7 +9,7 @@
     android:padding="5dp">
 
     <ImageView
-        android:id="@+id/showevent_imageView"
+        android:id="@+id/showevent_imageView_RV"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -18,46 +18,56 @@
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
-        android:id="@+id/colorBox_TextView"
+        android:id="@+id/colorBox_TextView_RV"
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:layout_below="@+id/showevent_imageView"
+        android:layout_below="@+id/showevent_imageView_RV"
         android:layout_marginTop="3dp"
-        android:background="#4CAF50"
-        android:gravity="center" />
+        android:background="@color/moroDarkGreenBackground"
+        android:gravity="center"
+        />
 
     <TextView
-        android:id="@+id/afstand_textView"
+        android:id="@+id/area_textView_RV"
         android:layout_width="103dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/showevent_imageView"
+        android:layout_below="@+id/showevent_imageView_RV"
         android:layout_marginTop="2dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/colorWhiteText"
+        tools:text="København V"
+        />
 
     <TextView
-        android:id="@+id/dato_textView"
+        android:id="@+id/date_textView_RV"
         android:layout_width="119dp"
         android:layout_height="31dp"
-        android:layout_below="@+id/showevent_imageView"
+        android:layout_below="@+id/showevent_imageView_RV"
         android:layout_marginStart="48dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="19dp"
-        android:layout_toStartOf="@+id/tidspunkt_textView"
-        android:layout_toEndOf="@+id/afstand_textView"
-        android:gravity="center" />
+        android:layout_toStartOf="@+id/time_textView_RV"
+        android:layout_toEndOf="@+id/area_textView_RV"
+        android:gravity="center"
+        android:textColor="@color/colorWhiteText"
+        tools:text="3/1/2020"
+        />
 
     <TextView
-        android:id="@+id/tidspunkt_textView"
+        android:id="@+id/time_textView_RV"
         android:layout_width="103dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/showevent_imageView"
+        android:layout_below="@+id/showevent_imageView_RV"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="9dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/colorWhiteText"
+        tools:text="10:00"
+        />
 
     <TextView
-        android:id="@+id/titel_textView"
+        android:id="@+id/title_textView_RV"
         android:layout_width="405dp"
         android:layout_height="46dp"
         android:layout_alignParentEnd="true"
@@ -66,8 +76,10 @@
         android:shadowColor="#000000"
         android:shadowDx="1"
         android:shadowRadius="1"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp" />
+        android:textColor="@color/colorBlackBackground"
+        android:textSize="24sp"
+        tools:text="Hygge på Hjørnet"
+        />
 
 
 </RelativeLayout>

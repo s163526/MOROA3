@@ -11,6 +11,8 @@ public class AddressDTO {
     String addressName;
 
     public AddressDTO(String area, String streetName, int streetNumber, int zipCode) {
+        if (additionalText==null){additionalText="";}
+        if (area==null){area="";}
         this.area = area;
         this.streetName = streetName;
         this.streetNumber = streetNumber;
@@ -63,5 +65,20 @@ public class AddressDTO {
 
     public void setAddressName(String addressName) {
         this.addressName = addressName;
+    }
+
+    @Override
+    public String toString() {
+        String result ="";
+        if (addressName!= null){
+            result+=addressName+ "\n ";
+        }
+        result += streetName +" " + streetNumber;
+        if (additionalText!= null){
+            result+=" " +additionalText;
+        }
+        result += "\n " + zipCode + " " + area;
+        return result;
+
     }
 }

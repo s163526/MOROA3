@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import dk.gruppea3moro.moroa3.model.TypeOrMoodFragment;
-
 
 //TODO viewpager
 public class FindEventFragment extends Fragment {

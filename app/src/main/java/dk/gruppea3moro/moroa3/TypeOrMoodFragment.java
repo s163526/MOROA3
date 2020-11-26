@@ -1,4 +1,4 @@
-package dk.gruppea3moro.moroa3.model;
+package dk.gruppea3moro.moroa3;
 
 import android.graphics.Typeface;
 import android.os.Bundle;

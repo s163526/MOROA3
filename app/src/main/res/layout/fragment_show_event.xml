@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowEventFragment">
+    android:id="@+id/fragment_show_event"
+    >
 
 
 
@@ -22,7 +23,7 @@
             />
 
         <TextView
-            android:id="@+id/eventNameTVShowEvent"
+            android:id="@+id/titleTVShowEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -30,7 +31,7 @@
             tools:text="POTTER MED PATTER"/>
 
         <TextView
-            android:id="@+id/eventDescriptionTVShowEvent"
+            android:id="@+id/descriptionTVShowEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -61,20 +62,21 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/priceTVShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16dp"
-            tools:text="100 dkk" />
-
-        <TextView
             android:id="@+id/addressTVShowEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="16dp"
             tools:text="Kgs. Nytorv 1" />
+
+
+        <TextView
+            android:id="@+id/priceTVShowEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="16dp"
+            tools:text="100 dkk" />
 
         <Button
             android:id="@+id/eventWebsiteButtonShowEvent"

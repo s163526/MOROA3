@@ -17,8 +17,8 @@ import dk.gruppea3moro.moroa3.FrontpageFragment;
 import dk.gruppea3moro.moroa3.MenuFragment;
 import dk.gruppea3moro.moroa3.MyProfileFragment;
 import dk.gruppea3moro.moroa3.R;
-import dk.gruppea3moro.moroa3.ShowEventFragment;
 import dk.gruppea3moro.moroa3.ShowResultFragment;
+import dk.gruppea3moro.moroa3.ShowEventFragment;
 import dk.gruppea3moro.moroa3.TipUsFragment;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -28,6 +28,7 @@ public class AppState //extends Application
     private static AppState instance;
     private Deque<Integer> integerDeque = new ArrayDeque<>(5);
     SearchCriteria searchCriteria;
+    private EventDTO featuredEvent;
 
 
     //STATIC METHODS--------------------------------------------------------------------------------
@@ -62,9 +63,11 @@ public class AppState //extends Application
             case R.id.fragment_frontpage:
                 return new FrontpageFragment();
             case R.id.fragment_right_now:
-                return new ShowEventFragment();
+                return new ShowResultFragment();
             case R.id.fragment_show_result:
                 return new ShowResultFragment();
+            case R.id.fragment_show_event:
+                return new ShowEventFragment();
             case R.id.fragment_find_event:
                 return new FindEventFragment();
             case R.id.fragment_my_profile:
@@ -140,4 +143,11 @@ public class AppState //extends Application
         this.searchCriteria = null;
     }
 
+    public EventDTO getFeaturedEvent() {
+        return featuredEvent;
+    }
+
+    public void setFeaturedEvent(EventDTO featuredEvent) {
+        this.featuredEvent = featuredEvent;
+    }
 }
