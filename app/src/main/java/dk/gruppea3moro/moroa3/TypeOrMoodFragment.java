@@ -10,16 +10,12 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import dk.gruppea3moro.moroa3.MoodFragment;
-import dk.gruppea3moro.moroa3.R;
-import dk.gruppea3moro.moroa3.TypeTabFragment;
-
 
 public class TypeOrMoodFragment extends Fragment implements View.OnClickListener {
 
     TextView type_textView, stemning_textView;
     TypeTabFragment typeTabFragment = new TypeTabFragment();
-    MoodFragment moodFragment = new MoodFragment();
+    MoodTabFragment moodTabFragment = new MoodTabFragment();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +42,7 @@ public class TypeOrMoodFragment extends Fragment implements View.OnClickListener
             stemning_textView.setTypeface(null, Typeface.NORMAL);
 
         } else if (v == stemning_textView) {
-            replaceFragment(moodFragment);
+            replaceFragment(moodTabFragment);
             stemning_textView.setTypeface(null, Typeface.BOLD);
             type_textView.setTypeface(null, Typeface.NORMAL);
 

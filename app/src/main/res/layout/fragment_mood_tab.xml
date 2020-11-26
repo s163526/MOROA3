@@ -25,7 +25,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/koncert"
+            android:text="@string/Du_ikke_vil_hjem_men_videre"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -43,10 +43,10 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/udstilling_og_kunst"
+            android:text="@string/Du_vil_ud_i_det_blå"
             android:textColor="#000000"
-            android:textSize="21sp"
 
+            android:textSize="21sp"
             android:textStyle="bold" />
 
         <Space
@@ -62,7 +62,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/litteratur"
+            android:text="@string/Du_har_tømmermænd"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -95,7 +95,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/film"
+            android:text="@string/Du_vil_udvide_din_horisont"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -113,7 +113,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/comedy"
+            android:text="@string/Du_har_tomme_lommer"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -131,7 +131,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/talk"
+            android:text="@string/Mad_gør_dig_glad"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -164,7 +164,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/teater"
+            android:text="@string/Du_vil_forkæle_dig_selv"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -182,7 +182,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/fest"
+            android:text="@string/Du_vil_imponere_din_date"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -200,7 +200,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/gratis"
+            android:text="@string/De_gamle_kommer_på_besøg"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -233,7 +233,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/sport_og_spil"
+            android:text="@string/Du_vil_have_gang_i_kroppen"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -251,7 +251,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/mad_og_drikke"
+            android:text="@string/temp"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
@@ -270,7 +270,7 @@
             android:background="@drawable/yellowborder"
             android:gravity="center"
             android:tag="yellow"
-            android:text="@string/mode"
+            android:text="@string/temp"
             android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold" />
