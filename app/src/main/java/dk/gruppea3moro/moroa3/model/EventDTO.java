@@ -7,16 +7,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class EventDTO implements Serializable {
-    String title, subtext, eventLink, imageLink;
-    Date startDate, endDate;
+    String title, subtext, eventLink, imageLink, startTime, endTime, startDate, endDate;
     double price;
     AddressDTO addressDTO;
     ArrayList<String> types, moods;
 
 
-
-
-    public EventDTO(String title, String subtext, String eventLink, Date startDate, Date endDate, double price, String imageLink) {
+    public EventDTO(String title, String subtext, String eventLink, String startDate, String endDate, double price, String imageLink) {
         this.title = title;
         this.subtext = subtext;
         this.eventLink = eventLink;
@@ -28,6 +25,18 @@ public class EventDTO implements Serializable {
 
     public EventDTO() {
 
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public String getTitle() {
@@ -54,19 +63,19 @@ public class EventDTO implements Serializable {
         this.eventLink = eventLink;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -126,20 +135,9 @@ public class EventDTO implements Serializable {
                 '}';
     }
 
-    public String getStartDay(){
-        Date d = getStartDate();
-        String res = d.getDay() +"/" +d.getMonth() +"/" +d.getYear();
-        return res; //TODO
-    }
 
-    public String getStartTime(){
-        Date d = getStartDate();
-        long seconds = d.getTime();
-        Time t = new Time(seconds);
-        String timeString = t.toString();
-        return timeString.substring(0,5);
+    public String getStartTime() {
+        return startTime;
 
     }
-
-
 }

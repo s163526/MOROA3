@@ -3,20 +3,21 @@ package dk.gruppea3moro.moroa3.model;
 public class AddressDTO {
     String area;
     String streetName;
-    int streetNumber;
-    int zipCode;
+    String streetNumber;
+    String zipCode;
 
     //Optional information, could be null.
     String additionalText;
     String addressName;
 
-    public AddressDTO(String area, String streetName, int streetNumber, int zipCode) {
+    public AddressDTO( String addressName, String streetName, String streetNumber, String additionalText, String zipCode,String area) {
         if (additionalText==null){additionalText="";}
         if (area==null){area="";}
         this.area = area;
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.zipCode = zipCode;
+        this.addressName = addressName;
     }
 
     public String getArea() {
@@ -35,19 +36,19 @@ public class AddressDTO {
         this.streetName = streetName;
     }
 
-    public int getStreetNumber() {
+    public String getStreetNumber() {
         return streetNumber;
     }
 
-    public void setStreetNumber(int streetNumber) {
+    public void setStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 
@@ -71,13 +72,13 @@ public class AddressDTO {
     public String toString() {
         String result ="";
         if (addressName!= null){
-            result+=addressName+ "\n ";
+            result+=addressName+ "\n";
         }
         result += streetName +" " + streetNumber;
         if (additionalText!= null){
             result+=" " +additionalText;
         }
-        result += "\n " + zipCode + " " + area;
+        result += "\n" + zipCode + " " + area;
         return result;
 
     }

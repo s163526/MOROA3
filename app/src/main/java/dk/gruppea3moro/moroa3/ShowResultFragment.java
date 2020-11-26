@@ -31,9 +31,9 @@ public class ShowResultFragment extends Fragment {
 
     private final View.OnClickListener mOnClickListener = new RVOnClickListener();
 
-    String[] eventArray = {"Fælles spisning", "Koncert", "Banko", "Sang", "Rundvisning", "The og kage"};
+/*    String[] eventArray = {"Fælles spisning", "Koncert", "Banko", "Sang", "Rundvisning", "The og kage"};
     // Vi laver en arrayliste så vi kan fjerne/indsætte elementer
-    ArrayList<String> events = new ArrayList<>(Arrays.asList(eventArray));
+    ArrayList<String> events = new ArrayList<>(Arrays.asList(eventArray));*/
 
     RecyclerView recyclerView;
 
@@ -108,7 +108,7 @@ public class ShowResultFragment extends Fragment {
             //Set views from current event data
             titleTV.setText(currentEvent.getTitle());
             areaTV.setText(currentEvent.getAddressDTO().getArea()); //TODO fix evt. indfør koordinater
-            dateTV.setText(currentEvent.getStartDay());
+            dateTV.setText(currentEvent.getStartDate());
             timeTV.setText(currentEvent.getStartTime());
 
             //Let Picasso handle the image

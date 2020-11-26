@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 import dk.gruppea3moro.moroa3.model.EventDTO;
 
 public class ShowEventFragment extends Fragment {
-    TextView title, subtext, price, startDay, startTime, address;
+    TextView title, subtext, price, startDay, startTime, address, eventLink;
     ImageView image;
     //TODO add link, image and more?
 
@@ -32,22 +32,30 @@ public class ShowEventFragment extends Fragment {
         startTime = root.findViewById(R.id.timeTVShowEvent);
         address = root.findViewById(R.id.addressTVShowEvent);
         image = root.findViewById(R.id.evnentImageShowEvent);
+        eventLink = root.findViewById(R.id.eventLinkShowEvent);
 
 
         setupEventView();
         return root;
     }
 
-    public void setupEventView(){
+    public void setupEventView() {
         Bundle arguments = getArguments();
         EventDTO eventDTO = (EventDTO) arguments.getSerializable("event");
 
         //Set text views
         title.setText(eventDTO.getTitle());
         subtext.setText(eventDTO.getSubtext());
-        price.setText("Pris: "+eventDTO.getPrice());
-        startDay.setText("Dato: "+eventDTO.getStartDay());
-        startTime.setText("Starter klokken " + eventDTO.getStartTime());
+
+        if (eventDTO.getPrice() < 1) {
+            price.setText("Pris: Gratis");
+        } else {
+            price.setText(String.format("Pris: %.0f", eventDTO.getPrice())+" kr.");
+        }
+
+        eventLink.setText("Læs mere: "+ eventDTO.getEventLink());
+        startDay.setText("Dato: " + eventDTO.getStartDate());
+        startTime.setText("Start: " + eventDTO.getStartTime());
         address.setText(eventDTO.getAddressDTO().toString());
 
         //Let Picasso handle the image

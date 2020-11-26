@@ -2,86 +2,110 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/fragment_show_event"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/evnentImageShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="341dp"
-            android:src="@android:drawable/btn_star_big_on"
-
-            />
-
-        <TextView
-            android:id="@+id/titleTVShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="35dp"
-            tools:text="POTTER MED PATTER"/>
-
-        <TextView
-            android:id="@+id/descriptionTVShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20dp"
-            tools:text="Lav din egen potte med patter"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            >
 
-            <TextView
-                android:id="@+id/dateTVShowEvent"
-                android:layout_width="209dp"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textSize="16dp"
-                tools:text="1/1/2021" />
+            <ImageView
+                android:id="@+id/evnentImageShowEvent"
+                android:layout_width="match_parent"
+                android:layout_height="341dp"
+                android:src="@android:drawable/btn_star_big_on" />
 
-            <TextView
-                android:id="@+id/timeTVShowEvent"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textSize="16dp"
-                tools:text="13:30" />
+                android:layout_margin="15dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/titleTVShowEvent"
+                    style="@style/AntonRegHeadingTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="35dp"
+                    tools:text="POTTER MED PATTER" />
+
+                <TextView
+                    android:id="@+id/descriptionTVShowEvent"
+                    style="@style/DeckerSubtextTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    tools:text="Lav din egen potte med patter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dateTVShowEvent"
+                        style="@style/AntonRegNormalTextViewStyle"
+                        android:layout_width="209dp"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textSize="16dp"
+                        tools:text="1/1/2021" />
+
+                    <TextView
+                        android:id="@+id/timeTVShowEvent"
+                        style="@style/AntonRegNormalTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+                        tools:text="13:30" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/addressTVShowEvent"
+                    style="@style/AntonRegNormalTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="TextView"
+                    android:textSize="16dp"
+                    tools:text="Kgs. Nytorv 1" />
+
+
+                <TextView
+                    android:id="@+id/priceTVShowEvent"
+                    style="@style/AntonRegNormalTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="TextView"
+                    android:textSize="16dp"
+                    tools:text="100 dkk" />
+
+                <TextView
+                    android:id="@+id/eventLinkShowEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="web"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/addressTVShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16dp"
-            tools:text="Kgs. Nytorv 1" />
-
-
-        <TextView
-            android:id="@+id/priceTVShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="16dp"
-            tools:text="100 dkk" />
-
-        <Button
-            android:id="@+id/eventWebsiteButtonShowEvent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-    </LinearLayout>
+    </ScrollView>
 </FrameLayout>
