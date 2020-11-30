@@ -12,17 +12,15 @@ import dk.gruppea3moro.moroa3.model.SearchCriteria;
 
 public class DataController {
 
-
     private static DataController instance;
     private EventLoader eventLoader;
 
-
-    public DataController(){
+    public DataController() {
         eventLoader = new SheetReader();
     }
 
-    public static DataController get(){
-        if (instance==null){
+    public static DataController get() {
+        if (instance == null) {
             instance = new DataController();
         }
         return instance;
@@ -32,7 +30,7 @@ public class DataController {
         return eventLoader;
     }
 
-    public ArrayList<EventDTO> getAllEvents()  {
+    public ArrayList<EventDTO> getAllEvents() {
         try {
             return getEventLoader().getAllEvents();
         } catch (IOException e) {
@@ -41,7 +39,7 @@ public class DataController {
         return null;
     }
 
-    public ArrayList<EventDTO> searchEvents(SearchCriteria searchCriteria)  {
+    public ArrayList<EventDTO> searchEvents(SearchCriteria searchCriteria) {
         try {
             return getEventLoader().searchEvents(searchCriteria);
         } catch (IOException e) {
@@ -50,16 +48,16 @@ public class DataController {
         return null;
     }
 
-    public ArrayList<EventDTO> getNextNEvents(int offset, int numberOfEvents, SearchCriteria sc)  {
+    public ArrayList<EventDTO> getNextNEvents(int offset, int numberOfEvents, SearchCriteria sc) {
         try {
-            return getEventLoader().getNextNEvents(offset,numberOfEvents,sc);
+            return getEventLoader().getNextNEvents(offset, numberOfEvents, sc);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public EventDTO getFeaturedEvent()  {
+    public EventDTO getFeaturedEvent() {
         try {
             return getEventLoader().getFeaturedEvent();
         } catch (IOException e) {
@@ -77,5 +75,4 @@ public class DataController {
             return null;
         }
     }
-
 }

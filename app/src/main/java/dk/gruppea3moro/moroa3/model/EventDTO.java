@@ -12,7 +12,6 @@ public class EventDTO implements Serializable {
     AddressDTO addressDTO;
     ArrayList<String> types, moods;
 
-
     public EventDTO(String title, String subtext, String eventLink, String startDate, String endDate, double price, String imageLink) {
         this.title = title;
         this.subtext = subtext;

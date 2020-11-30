@@ -7,7 +7,7 @@ public class SearchCriteria {
     private Date fromDate, toDate;
     private ArrayList<String> areas, types, moods;
 
-    public SearchCriteria(){
+    public SearchCriteria() {
         areas = new ArrayList<String>();
         types = new ArrayList<String>();
         moods = new ArrayList<String>();
@@ -40,8 +40,4 @@ public class SearchCriteria {
     public ArrayList<String> getMoods() {
         return moods;
     }
-
-//h
-
-
 }

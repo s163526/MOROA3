@@ -8,18 +8,15 @@ import dk.gruppea3moro.moroa3.model.EventDTO;
 public class SheetReaderTester {
     public static void main(String[] args) {
         SheetReader s = new SheetReader();
-        try{
-            ArrayList<EventDTO> x= s.getAllEvents();
+        try {
+            ArrayList<EventDTO> x = s.getAllEvents();
             System.out.println("Færdig med at læse - nu princtes resultatet");
-            for (EventDTO event:x) {
+            for (EventDTO event : x) {
                 System.out.println(event);
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-
-
-
 }

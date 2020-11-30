@@ -20,7 +20,6 @@ public class ShowEventFragment extends Fragment {
     ImageView image;
     //TODO add link, image and more?
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class ShowEventFragment extends Fragment {
         image = root.findViewById(R.id.evnentImageShowEvent);
         eventLink = root.findViewById(R.id.eventLinkShowEvent);
 
-
         setupEventView();
         return root;
     }
@@ -45,10 +43,9 @@ public class ShowEventFragment extends Fragment {
         EventDTO eventDTO;
         try { //TODO evt. gør dette mere elegant - det er lidt en cowboy-løsning men det virker
             eventDTO = (EventDTO) arguments.getSerializable("event");
-        } catch (Exception e){
+        } catch (Exception e) {
             eventDTO = AppState.get().getLastViewedEvent();
         }
-
 
         //Set text views
         title.setText(eventDTO.getTitle());
@@ -57,10 +54,10 @@ public class ShowEventFragment extends Fragment {
         if (eventDTO.getPrice() < 1) {
             price.setText("Pris: Gratis");
         } else {
-            price.setText(String.format("Pris: %.0f", eventDTO.getPrice())+" kr.");
+            price.setText(String.format("Pris: %.0f", eventDTO.getPrice()) + " kr.");
         }
 
-        eventLink.setText("Læs mere: "+ eventDTO.getEventLink());
+        eventLink.setText("Læs mere: " + eventDTO.getEventLink());
         startDay.setText("Dato: " + eventDTO.getStartDate());
         startTime.setText("Start: " + eventDTO.getStartTime());
         address.setText(eventDTO.getAddressDTO().toString());

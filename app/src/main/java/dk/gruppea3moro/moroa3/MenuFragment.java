@@ -50,5 +50,4 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             ma.loadFragment(tipUsFragment);
         }
     }
-
 }

@@ -21,7 +21,6 @@ public class TypeTabFragment extends Fragment implements View.OnClickListener {
     TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7, textView8,
             textView9, textView10, textView11, textView12;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,18 +55,15 @@ public class TypeTabFragment extends Fragment implements View.OnClickListener {
         textView11.setOnClickListener(this);
         textView12.setOnClickListener(this);
 
-
         return root;
-
     }
-
 
     @Override
     public void onClick(View v) {
         if (v == textView1) {
             if (textView1.getTag().equals("yellow")) {
-            textView1.setBackgroundResource(R.drawable.greenborder);
-            textView1.setTag("green");
+                textView1.setBackgroundResource(R.drawable.greenborder);
+                textView1.setTag("green");
             } else {
                 textView1.setBackgroundResource(R.drawable.yellowborder);
                 textView1.setTag("yellow");
@@ -183,6 +179,5 @@ public class TypeTabFragment extends Fragment implements View.OnClickListener {
                 textView12.setTag("yellow");
             }
         }
-
     }
 }

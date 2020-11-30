@@ -32,7 +32,6 @@ public class AppState //extends Application
     private EventDTO lastViewedEvent;
     private EventDTO featuredEvent;
 
-
     //STATIC METHODS--------------------------------------------------------------------------------
     public static AppState get() {
         if (instance == null) {
@@ -72,7 +71,7 @@ public class AppState //extends Application
                 return new ShowEventFragment();
             case R.id.fragment_find_event:
                 Bundle b = new Bundle();
-                b.putSerializable("event",AppState.get().getLastViewedEvent());
+                b.putSerializable("event", AppState.get().getLastViewedEvent());
                 Fragment f = new FindEventFragment();
                 f.setArguments(b);
                 return f;
@@ -99,7 +98,6 @@ public class AppState //extends Application
 
     //NON STATIC METHODS----------------------------------------------------------------------------
 
-
     public void saveToPM(Context context) {
         SharedPreferences mPrefs = context.getSharedPreferences("AppState", MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
@@ -119,11 +117,9 @@ public class AppState //extends Application
         System.out.println("Har lige læst " + json + " fra PM.");
     }
 
-
     public Deque<Integer> getIntegerDeque() {
         return integerDeque;
     }
-
 
     public void pushToBackstackDequeTop(int fragmentID) {
         //Get selected item id
