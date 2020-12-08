@@ -54,7 +54,7 @@ public class SheetReader implements EventLoader {
         event.setStartDate(fields[6]);
         event.setEndTime(fields[7]);
         event.setEndDate(fields[8]);
-        event.setAddressDTO(new AddressDTO(fields[9], fields[10], fields[11], fields[12], fields[13], fields[14])); //TODO kan give problemer hvis nr. er eks 23A
+        event.setAddressDTO(new AddressDTO(fields[9], fields[10], fields[11], fields[12], fields[13], fields[14]));
         event.setMoods(parseTags(fields[15]));
         event.setTypes(parseTags(fields[16]));
         return event;

@@ -45,8 +45,6 @@ public class TypeOrMoodFragment extends Fragment implements View.OnClickListener
             replaceFragment(moodTabFragment);
             stemning_textView.setTypeface(null, Typeface.BOLD);
             type_textView.setTypeface(null, Typeface.NORMAL);
-
-
         }
     }
 

@@ -31,14 +31,8 @@ public class ShowResultFragment extends Fragment {
 
     private final View.OnClickListener mOnClickListener = new RVOnClickListener();
 
-/*    String[] eventArray = {"Fælles spisning", "Koncert", "Banko", "Sang", "Rundvisning", "The og kage"};
-    // Vi laver en arrayliste så vi kan fjerne/indsætte elementer
-    ArrayList<String> events = new ArrayList<>(Arrays.asList(eventArray));*/
-
     RecyclerView recyclerView;
-
     ArrayList<EventDTO> eventDTOs;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,19 +41,17 @@ public class ShowResultFragment extends Fragment {
         //Gets SearchCriteria from appstate
         SearchCriteria searchCriteria = AppState.get().getSearchCriteria();
 
-
         //Create RecyclerView -  empty at first
         recyclerView = new RecyclerView(getContext());
-
 
         //Get events with DataController from BackgroundThread
         Executor bgThread = Executors.newSingleThreadExecutor();
         Handler uiThread = new Handler();
-        bgThread.execute(() ->{
+        bgThread.execute(() -> {
             //Gets event from searchCriteria via. DataController
-            eventDTOs= DataController.get().searchEvents(searchCriteria);
+            eventDTOs = DataController.get().searchEvents(searchCriteria);
 
-            uiThread.post(()->{
+            uiThread.post(() -> {
                 // Inflate the layout (recyclerview) for this fragment
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 recyclerView.setAdapter(adapter);
@@ -104,7 +96,6 @@ public class ShowResultFragment extends Fragment {
             EventDTO currentEvent = eventDTOs.get(position);
             System.out.println(currentEvent);
 
-
             //Set views from current event data
             titleTV.setText(currentEvent.getTitle());
             areaTV.setText(currentEvent.getAddressDTO().getArea()); //TODO fix evt. indfør koordinater
@@ -115,7 +106,7 @@ public class ShowResultFragment extends Fragment {
             Picasso.get().load(currentEvent.getImageLink())
                     .placeholder(R.drawable.default_event)
                     .into(imageView);
-            }
+        }
     };
 
     class RVOnClickListener implements View.OnClickListener {
@@ -129,17 +120,13 @@ public class ShowResultFragment extends Fragment {
 
             //Fragment transaction with event as argument
             Fragment f = AppState.getFragmentFromLayoutId(R.id.fragment_show_event);
+            AppState.get().setLastViewedEvent(event);
             Bundle b = new Bundle();
-            b.putSerializable("event",event);
+            b.putSerializable("event", event);
             f.setArguments(b);
             AppState.get().pushToBackstackDequeTop(R.id.fragment_show_event);
             ((MainActivity) getActivity()).loadFragment(f);
 
         }
     }
-
-    
-
-
-
 }

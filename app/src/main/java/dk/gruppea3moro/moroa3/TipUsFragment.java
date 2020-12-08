@@ -29,10 +29,6 @@ public class TipUsFragment extends Fragment implements View.OnClickListener {
         chooseDate = root.findViewById(R.id.eventChooseDate);
         chooseDate.setOnClickListener(this);
 
-
-
-
-
         /*
         TODO Skal muligvis bare slettes afhænig af hvad MORO gerne vil have af valg af dato metode
         //Inputs data into the 3 Spinners

@@ -18,7 +18,6 @@ public class FeaturedEventFragment extends Fragment {
     TextView title, startTime, address;
     ImageView image;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,12 +29,11 @@ public class FeaturedEventFragment extends Fragment {
         address = root.findViewById(R.id.featuredEventAddressTV);
         image = root.findViewById(R.id.featuredEventImageView);
 
-
         setupEventView();
         return root;
     }
 
-    public void setupEventView(){
+    public void setupEventView() {
         Bundle arguments = getArguments();
         EventDTO eventDTO = (EventDTO) arguments.getSerializable("event");
 

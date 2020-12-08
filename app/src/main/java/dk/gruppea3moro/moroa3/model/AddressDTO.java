@@ -12,9 +12,13 @@ public class AddressDTO implements Serializable {
     String additionalText;
     String addressName;
 
-    public AddressDTO( String addressName, String streetName, String streetNumber, String additionalText, String zipCode,String area) {
-        if (additionalText==null){additionalText="";}
-        if (area==null){area="";}
+    public AddressDTO(String addressName, String streetName, String streetNumber, String additionalText, String zipCode, String area) {
+        if (additionalText == null) {
+            additionalText = "";
+        }
+        if (area == null) {
+            area = "";
+        }
         this.area = area;
         this.streetName = streetName;
         this.streetNumber = streetNumber;
@@ -72,13 +76,13 @@ public class AddressDTO implements Serializable {
 
     @Override
     public String toString() {
-        String result ="";
-        if (addressName!= null){
-            result+=addressName+ "\n";
+        String result = "";
+        if (addressName != null) {
+            result += addressName + "\n";
         }
-        result += streetName +" " + streetNumber;
-        if (additionalText!= null){
-            result+=" " +additionalText;
+        result += streetName + " " + streetNumber;
+        if (additionalText != null) {
+            result += " " + additionalText;
         }
         result += "\n" + zipCode + " " + area;
         return result;

@@ -12,13 +12,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import dk.gruppea3moro.moroa3.model.AppState;
 import dk.gruppea3moro.moroa3.model.EventDTO;
 
 public class ShowEventFragment extends Fragment {
     TextView title, subtext, price, startDay, startTime, address, eventLink;
     ImageView image;
     //TODO add link, image and more?
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,14 +34,18 @@ public class ShowEventFragment extends Fragment {
         image = root.findViewById(R.id.evnentImageShowEvent);
         eventLink = root.findViewById(R.id.eventLinkShowEvent);
 
-
         setupEventView();
         return root;
     }
 
     public void setupEventView() {
         Bundle arguments = getArguments();
-        EventDTO eventDTO = (EventDTO) arguments.getSerializable("event");
+        EventDTO eventDTO;
+        try { //TODO evt. gør dette mere elegant - det er lidt en cowboy-løsning men det virker
+            eventDTO = (EventDTO) arguments.getSerializable("event");
+        } catch (Exception e) {
+            eventDTO = AppState.get().getLastViewedEvent();
+        }
 
         //Set text views
         title.setText(eventDTO.getTitle());
@@ -50,10 +54,10 @@ public class ShowEventFragment extends Fragment {
         if (eventDTO.getPrice() < 1) {
             price.setText("Pris: Gratis");
         } else {
-            price.setText(String.format("Pris: %.0f", eventDTO.getPrice())+" kr.");
+            price.setText(String.format("Pris: %.0f", eventDTO.getPrice()) + " kr.");
         }
 
-        eventLink.setText("Læs mere: "+ eventDTO.getEventLink());
+        eventLink.setText("Læs mere: " + eventDTO.getEventLink());
         startDay.setText("Dato: " + eventDTO.getStartDate());
         startTime.setText("Start: " + eventDTO.getStartTime());
         address.setText(eventDTO.getAddressDTO().toString());

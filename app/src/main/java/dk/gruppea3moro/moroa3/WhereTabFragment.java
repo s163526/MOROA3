@@ -20,7 +20,6 @@ public class WhereTabFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_where_tab, container, false);
 
-
         textView1 = root.findViewById(R.id.textView1);
         textView2 = root.findViewById(R.id.textView2);
         textView3 = root.findViewById(R.id.textView3);
@@ -47,10 +46,8 @@ public class WhereTabFragment extends Fragment implements View.OnClickListener {
         textView11.setOnClickListener(this);
         textView12.setOnClickListener(this);
 
-
         return root;
     }
-
 
 
     @Override

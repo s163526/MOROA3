@@ -24,7 +24,6 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
     Button rightNowButton, findEventButton;
     FrameLayout featuredEventFL;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         rightNowButton.setOnClickListener(this);
 
         //FeaturedEventFrameLayout
-        featuredEventFL=root.findViewById(R.id.featuredEventFrontpageFL);
+        featuredEventFL = root.findViewById(R.id.featuredEventFrontpageFL);
         featuredEventFL.setOnClickListener(this);
 
         return root;
@@ -49,36 +48,32 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        MainActivity ma = ((MainActivity)getActivity());
+        MainActivity ma = ((MainActivity) getActivity());
         if (v == findEventButton) {
             //Put the selected fragment to top of backstack-deque.
             AppState.get().pushToBackstackDequeTop(R.id.fragment_find_event);
             //Set selection on bottom navigation bar
             ma.setBottonNavSelection(R.id.fragment_find_event);
             //Get fragment object and load
-            Fragment f =AppState.getFragmentFromLayoutId(R.id.fragment_find_event);
-            ((MainActivity)getActivity()).loadFragment(f);
-        }
-
-        else if (v == rightNowButton) {
+            Fragment f = AppState.getFragmentFromLayoutId(R.id.fragment_find_event);
+            ((MainActivity) getActivity()).loadFragment(f);
+        } else if (v == rightNowButton) {
             //Put the selected fragment to top of backstack-deque.
             AppState.get().pushToBackstackDequeTop(R.id.fragment_right_now);
             //Set selection on bottom navigation bar
             ma.setBottonNavSelection(R.id.fragment_right_now);
             //Get fragment object and load
-            Fragment f =AppState.get().getFragmentFromLayoutId(R.id.fragment_right_now);
-            ((MainActivity)getActivity()).loadFragment(f);
-        }
-
-        else if (v==featuredEventFL){
+            Fragment f = AppState.get().getFragmentFromLayoutId(R.id.fragment_right_now);
+            ((MainActivity) getActivity()).loadFragment(f);
+        } else if (v == featuredEventFL) {
             openFeaturedEventFragment();
         }
     }
 
-    public void setupFeaturedEvent(){
+    public void setupFeaturedEvent() {
 
         //Check if featuredEvent is saved in AppState
-        if (AppState.get().getFeaturedEvent()!=null){
+        if (AppState.get().getFeaturedEvent() != null) {
             replaceFeaturedEvent(AppState.get().getFeaturedEvent());
             return; //No need to proceed if featuredEvent was in AppState
         }
@@ -89,29 +84,29 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         Handler uiThread = new Handler();
 
         //Execute bg thread
-        bgThread.execute(() ->{
+        bgThread.execute(() -> {
             //Get featured event with DataController from BackgroundThread
-            EventDTO featuredEventDTO= DataController.get().getFeaturedEvent();
+            EventDTO featuredEventDTO = DataController.get().getFeaturedEvent();
 
             //Set this event to be featuredEvent in AppState
             AppState.get().setFeaturedEvent(featuredEventDTO);
 
             //Post the fragment transaction on UI-thread
-            uiThread.post(()->{
-               replaceFeaturedEvent(featuredEventDTO);
+            uiThread.post(() -> {
+                replaceFeaturedEvent(featuredEventDTO);
             });
         });
     }
 
-    public void replaceFeaturedEvent(EventDTO featuredEvent){
+    public void replaceFeaturedEvent(EventDTO featuredEvent) {
         //Get ready for fragment transaction for featured event
         Bundle b = new Bundle();
-        b.putSerializable("event",featuredEvent);
+        b.putSerializable("event", featuredEvent);
         Fragment featuredEventFragment = new FeaturedEventFragment();
         featuredEventFragment.setArguments(b);
 
         //If Activity is ready for it
-        if (getActivity()!= null){
+        if (getActivity() != null) {
             //Make fragment transaction
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
@@ -120,13 +115,14 @@ public class FrontpageFragment extends Fragment implements View.OnClickListener 
         }
     }
 
-    public void openFeaturedEventFragment(){
+    public void openFeaturedEventFragment() {
         //Get featured event from AppState - should have been initialized by now
         EventDTO featuredEvent = AppState.get().getFeaturedEvent();
 
         //Get ready for fragment transaction for featured event
         Bundle b = new Bundle();
-        b.putSerializable("event",featuredEvent);
+        b.putSerializable("event", featuredEvent);
+        AppState.get().setLastViewedEvent(featuredEvent);
         Fragment featuredEventFragment = new ShowEventFragment();
         featuredEventFragment.setArguments(b);
 
